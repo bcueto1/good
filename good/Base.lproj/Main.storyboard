@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="good" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksX-Ym-dP9" userLabel="header">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.50196078431372548" green="0.58823529411764708" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="qWw-am-2xA"/>
+                                    <constraint firstAttribute="width" constant="375" id="vzW-j3-7PC"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="3gw-3v-0gc">
+                                <rect key="frame" x="68" y="315" width="240" height="187"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9w-ik-XSR" userLabel="FBLoginButton" customClass="AspectFitButton" customModule="good" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="4i9-Ts-BtT"/>
+                                            <constraint firstAttribute="height" constant="40" id="xjn-j5-cJf"/>
+                                        </constraints>
+                                        <state key="normal" image="FBLogInButton"/>
+                                        <connections>
+                                            <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ps-6G-GH6"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email/Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86E-c8-sT1">
+                                        <rect key="frame" x="0.0" y="49" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="3Hb-0o-Hym"/>
+                                            <constraint firstAttribute="height" constant="40" id="Vyg-Hr-3Aj"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1L-kX-3R5">
+                                        <rect key="frame" x="0.0" y="98" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="TBq-dN-6yt"/>
+                                            <constraint firstAttribute="width" constant="240" id="oRU-kM-hLw"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeA-dX-vKQ" customClass="AspectFitButton" customModule="good" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="147" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="FZa-B1-rpu"/>
+                                            <constraint firstAttribute="height" constant="40" id="rK8-Ig-qQA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                        <state key="normal" title="Log In" backgroundImage="goodButtonColor">
+                                            <color key="titleColor" red="1" green="0.87450980389999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYY-3T-EgT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goodLogo" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-xG-wys" customClass="RoundImage" customModule="good" customModuleProvider="target">
+                                <rect key="frame" x="123" y="173" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="18y-a9-4EI"/>
+                                    <constraint firstAttribute="width" constant="128" id="vVr-KI-EU1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ksX-Ym-dP9" secondAttribute="trailing" id="NkB-iF-Ckd"/>
+                            <constraint firstItem="DaR-xG-wys" firstAttribute="top" secondItem="ksX-Ym-dP9" secondAttribute="bottom" constant="108" id="Tuq-ZT-eMS"/>
+                            <constraint firstItem="ksX-Ym-dP9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZKg-A7-sAH"/>
+                            <constraint firstItem="3gw-3v-0gc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c8U-0p-kRk"/>
+                            <constraint firstItem="3gw-3v-0gc" firstAttribute="top" secondItem="DaR-xG-wys" secondAttribute="bottom" constant="14" id="jIh-6c-f3G"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ksX-Ym-dP9" secondAttribute="bottom" constant="602" id="pjs-jN-uQt"/>
+                            <constraint firstItem="DaR-xG-wys" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sNy-We-Ik3"/>
+                            <constraint firstItem="ksX-Ym-dP9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tIh-2v-yiC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="86E-c8-sT1" id="tXl-an-i3a"/>
+                        <outlet property="passwordField" destination="Y1L-kX-3R5" id="VdJ-ou-gN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FBLogInButton" width="416" height="101"/>
+        <image name="goodButtonColor" width="240" height="30"/>
+        <image name="goodLogo" width="208" height="209"/>
+    </resources>
 </document>
