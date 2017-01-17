@@ -17,7 +17,21 @@
 		D34873BE1E1314F50083331C /* good.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D34873BC1E1314F50083331C /* good.xcdatamodeld */; };
 		D34873C01E1314F50083331C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34873BF1E1314F50083331C /* Assets.xcassets */; };
 		D34873C31E1314F50083331C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34873C11E1314F50083331C /* LaunchScreen.storyboard */; };
+		D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A79761E1D6E9A00CFF7AC /* MapVC.swift */; };
+		D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECC81E255C6A00A3611F /* AuthService.swift */; };
+		D378ECCC1E25D2FB00A3611F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECCB1E25D2FB00A3611F /* User.swift */; };
+		D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39137141E1D8033001526B1 /* ProfileVC.swift */; };
+		D39137171E1D804A001526B1 /* MessagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39137161E1D804A001526B1 /* MessagingVC.swift */; };
+		D39137191E1D8096001526B1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39137181E1D8096001526B1 /* MapKit.framework */; };
+		D391371B1E1DEE3E001526B1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391371A1E1DEE3E001526B1 /* SignUpVC.swift */; };
+		D391371D1E1DF5CB001526B1 /* FormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391371C1E1DF5CB001526B1 /* FormVC.swift */; };
+		D39593E51E2EB61D007FCD0F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39593E41E2EB61D007FCD0F /* SettingsVC.swift */; };
 		D3A1E6F21E13990700F53173 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3A1E6F11E13990700F53173 /* GoogleService-Info.plist */; };
+		D3C074CF1E17154000BCC927 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C074CE1E17154000BCC927 /* Constants.swift */; };
+		D3C8576D1E2A89F300DDA3D5 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8576C1E2A89F300DDA3D5 /* Form.swift */; };
+		D3C8576F1E2AC03B00DDA3D5 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8576E1E2AC03B00DDA3D5 /* HistoryVC.swift */; };
+		D3FDC6C91E2EB23500F12A8A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDC6C81E2EB23500F12A8A /* DataService.swift */; };
+		D3FDC6CB1E2EB3A500F12A8A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDC6CA1E2EB3A500F12A8A /* ChatVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +49,22 @@
 		D34873BF1E1314F50083331C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34873C21E1314F50083331C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D34873C41E1314F50083331C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34A79761E1D6E9A00CFF7AC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		D378ECC81E255C6A00A3611F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D378ECCB1E25D2FB00A3611F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D39137141E1D8033001526B1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		D39137161E1D804A001526B1 /* MessagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingVC.swift; sourceTree = "<group>"; };
+		D39137181E1D8096001526B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D391371A1E1DEE3E001526B1 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		D391371C1E1DF5CB001526B1 /* FormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormVC.swift; sourceTree = "<group>"; };
+		D39593E41E2EB61D007FCD0F /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D3A1E6F01E137D7000F53173 /* good.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = good.entitlements; sourceTree = "<group>"; };
 		D3A1E6F11E13990700F53173 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3C074CE1E17154000BCC927 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D3C8576C1E2A89F300DDA3D5 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		D3C8576E1E2AC03B00DDA3D5 /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		D3FDC6C81E2EB23500F12A8A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D3FDC6CA1E2EB3A500F12A8A /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39137191E1D8096001526B1 /* MapKit.framework in Frameworks */,
 				4DCA36F8360A402B01CB2983 /* Pods_good.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				D30D8DA71E158D3E00E1FA7E /* SignInVC.swift */,
+				D34A79761E1D6E9A00CFF7AC /* MapVC.swift */,
+				D39137141E1D8033001526B1 /* ProfileVC.swift */,
+				D39137161E1D804A001526B1 /* MessagingVC.swift */,
+				D391371A1E1DEE3E001526B1 /* SignUpVC.swift */,
+				D391371C1E1DF5CB001526B1 /* FormVC.swift */,
+				D3C8576E1E2AC03B00DDA3D5 /* HistoryVC.swift */,
+				D3FDC6CA1E2EB3A500F12A8A /* ChatVC.swift */,
+				D39593E41E2EB61D007FCD0F /* SettingsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -122,14 +159,35 @@
 		D34873B41E1314F50083331C /* good */ = {
 			isa = PBXGroup;
 			children = (
+				D34A79741E1D6D3A00CFF7AC /* Services */,
+				D3C074CD1E17153300BCC927 /* Util */,
 				D30D8DB41E16F57100E1FA7E /* Extentions */,
+				D378ECCA1E25D2C000A3611F /* Models */,
 				D30D8DA41E157AD600E1FA7E /* Controllers */,
-				D30D8DA31E157AC600E1FA7E /* Storyboards */,
 				D30D8DA11E1469E300E1FA7E /* Views */,
+				D30D8DA31E157AC600E1FA7E /* Storyboards */,
 				D3A1E6F31E139C8E00F53173 /* Resources */,
 				D34873B51E1314F50083331C /* AppDelegate.swift */,
 			);
 			path = good;
+			sourceTree = "<group>";
+		};
+		D34A79741E1D6D3A00CFF7AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D378ECC81E255C6A00A3611F /* AuthService.swift */,
+				D3FDC6C81E2EB23500F12A8A /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		D378ECCA1E25D2C000A3611F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D378ECCB1E25D2FB00A3611F /* User.swift */,
+				D3C8576C1E2A89F300DDA3D5 /* Form.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D3A1E6F31E139C8E00F53173 /* Resources */ = {
@@ -145,9 +203,18 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		D3C074CD1E17153300BCC927 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D3C074CE1E17154000BCC927 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		DF239CB9568F600E2328AA3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D39137181E1D8096001526B1 /* MapKit.framework */,
 				85A400B4BC50DF6F45FEB953 /* Pods_good.framework */,
 			);
 			name = Frameworks;
@@ -192,6 +259,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -286,12 +356,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39593E51E2EB61D007FCD0F /* SettingsVC.swift in Sources */,
+				D3FDC6CB1E2EB3A500F12A8A /* ChatVC.swift in Sources */,
 				D34873BE1E1314F50083331C /* good.xcdatamodeld in Sources */,
 				D30D8DB31E15D4E500E1FA7E /* AspectFitButton.swift in Sources */,
+				D3C8576D1E2A89F300DDA3D5 /* Form.swift in Sources */,
 				D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtentions.swift in Sources */,
+				D391371B1E1DEE3E001526B1 /* SignUpVC.swift in Sources */,
+				D3C8576F1E2AC03B00DDA3D5 /* HistoryVC.swift in Sources */,
+				D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */,
 				D30D8DA81E158D3E00E1FA7E /* SignInVC.swift in Sources */,
+				D378ECCC1E25D2FB00A3611F /* User.swift in Sources */,
+				D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */,
+				D3C074CF1E17154000BCC927 /* Constants.swift in Sources */,
+				D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */,
+				D391371D1E1DF5CB001526B1 /* FormVC.swift in Sources */,
 				D30D8DB11E15B96600E1FA7E /* RoundImage.swift in Sources */,
 				D34873B61E1314F50083331C /* AppDelegate.swift in Sources */,
+				D39137171E1D804A001526B1 /* MessagingVC.swift in Sources */,
+				D3FDC6C91E2EB23500F12A8A /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 28F8545B7F92C9CE6CDCEEB0 /* Pods-good.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = good/good.entitlements;
 				DEVELOPMENT_TEAM = R279MP7D2B;
@@ -430,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5138649D8647B26A5A9E6426 /* Pods-good.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = good/good.entitlements;
 				DEVELOPMENT_TEAM = R279MP7D2B;

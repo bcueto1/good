@@ -10,6 +10,7 @@ import UIKit
 
 class RoundImage: UIImageView {
     
+    // Gets an image and makes it circular
     override func layoutSubviews() {
         super.layoutSubviews()
         

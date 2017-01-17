@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" constant="99" id="7AH-10-bi3"/>
                                     <constraint firstAttribute="height" constant="46" id="Yzj-ll-fPs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="32"/>
                                 <color key="textColor" red="1" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>

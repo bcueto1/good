@@ -6,6 +6,7 @@ target 'good' do
   use_frameworks!
 
   # Pods for good
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
@@ -13,5 +14,6 @@ target 'good' do
   pod 'Firebase/Messaging'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'JSQMessagesViewController'
   pod 'SwiftKeychainWrapper'
 end

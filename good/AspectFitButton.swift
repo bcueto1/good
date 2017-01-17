@@ -10,11 +10,12 @@ import UIKit
 
 class AspectFitButton: UIButton {
 
+    // Makes the button images aspect fit as well as create rounded corners
     override func layoutSubviews() {
         super.layoutSubviews()
         
         imageView?.contentMode = UIViewContentMode.scaleAspectFit
-        layer.cornerRadius = self.frame.width / 2
+        layer.cornerRadius = self.frame.width / 16
         layer.masksToBounds = true
         clipsToBounds = true
     }

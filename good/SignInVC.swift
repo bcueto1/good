@@ -12,18 +12,27 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
+    //------- OUTLETS --------//
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        FIRMessaging.messaging().subscribe(toTopic: "/topics/news")  
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "loginToMain", sender: nil)
+        }
+    }
+    
+    //Facebook authentication, to be completed later
+    /*
     @IBAction func facebookBtnTapped(_ sender: Any) {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -45,27 +54,63 @@ class SignInVC: UIViewController {
                 print("Unable to authenticate with Firebase - \(error)")
             } else {
                 print("Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
-    }
+    } */
     
+    
+    // Handles Login Functionality
     @IBAction func logInTapped(_ sender: Any) {
-        if let email = emailField.text, let password = passwordField.text {
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        // If the email or password fields are blank
+        if self.emailField.text == "" || self.passwordField.text == "" {
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            // Sends infomration to Firebase to handle
+            FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!) { (user, error) in
+                
                 if error == nil {
-                    print("Successfully authenticated with Firebase using email already entered")
+                    
+                    //Print into the console if successfully logged in
+                    print("You have successfully logged in")
+                    
+                    //Go to the MapVC if the login is sucessful
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
+                    
                 } else {
-                    FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                        if error != nil {
-                            print("Unable to authenticate with Firebase")
-                        } else {
-                            print("Successfully authenticated with Firebase with new email")
-                        }
-                    })
+                    
+                    //Tells the user that there is an error and then gets firebase to tell them the error
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 }
-            })
+            }
         }
         
+    }
+    
+    //Automatically logs into the application
+    func completeSignIn(id: String) {
+        _ = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        
+        let storyboard = UIStoryboard(name: "main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "MapVC")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = newVC
     }
     
 }
