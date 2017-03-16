@@ -27,12 +27,12 @@
                                     <constraint firstAttribute="width" constant="99" id="7AH-10-bi3"/>
                                     <constraint firstAttribute="height" constant="46" id="Yzj-ll-fPs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
                                 <color key="textColor" red="1" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.50196078431372548" green="0.58823529411764708" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.41675820949999998" green="0.53247696160000002" blue="0.86282461880000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="18Z-dH-PUh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YcD-C7-yXd"/>
                             <constraint firstItem="18Z-dH-PUh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZjV-bg-dFp"/>

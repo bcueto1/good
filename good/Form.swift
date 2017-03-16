@@ -8,86 +8,180 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseDatabase
 
+/**
+ * Form struct that describes all the variables and information for a proper form.
+ *
+ */
 struct Form {
     
-    private var _requestOrOffer: String
-    private var _typeOfGood: String
-    private var _specificDeed: String
-    private var _pointsAllocated: Int
+    /** private variables */
+    private var _request: Bool
+    private var _type: String
+    //private var _specific: String
     private var _firstName: String
     private var _zipcode: String
     private var _message: String
-    private var _formID: String
+    private var _postID: String
+    private var _formDate: NSNumber
+    private var _submitterUID: String
+    private var _takerUID: String
+    private var _latitude: NSNumber
+    private var _longitude: NSNumber
+    private var _completed: Bool
+    private var ref: FIRDatabaseReference!
+    private var key: String?
     
-    init(myFormID: String) {
-        _requestOrOffer = ""
-        _typeOfGood = ""
-        _specificDeed = ""
-        _pointsAllocated = 0
-        _firstName = ""
-        _zipcode = ""
-        _message = ""
-        _formID = myFormID
+    /**
+     * Initializer using Firebase snapshot.
+     *
+     */
+    init(snapshot: FIRDataSnapshot) {
+        self.key = snapshot.key
+        self.ref = snapshot.ref
+        self._postID = ((snapshot.value! as! NSDictionary)["postID"] as? String)!
+        self._formDate = ((snapshot.value! as! NSDictionary)["formDate"] as? NSNumber)!
+        self._submitterUID = ((snapshot.value! as! NSDictionary)["submitterUID"] as? String)!
+        self._takerUID = ((snapshot.value! as! NSDictionary)["takerUID"] as? String)!
+        self._request = (snapshot.value! as! NSDictionary)["request"] as! Bool
+        self._type = (snapshot.value! as! NSDictionary)["type"] as! String
+        //self._specific = (snapshot.value! as! NSDictionary)["specific"] as! String
+        self._firstName = (snapshot.value! as! NSDictionary)["firstName"] as! String
+        self._zipcode = (snapshot.value! as! NSDictionary)["zipcode"] as! String
+        self._message = (snapshot.value! as! NSDictionary)["message"] as! String
+        self._latitude = (snapshot.value! as! NSDictionary)["latitude"] as! NSNumber
+        self._longitude = (snapshot.value! as! NSDictionary)["longitude"] as! NSNumber
+        self._completed = (snapshot.value! as! NSDictionary)["completed"] as! Bool
     }
     
-    var formID: String {
-        get {
-            return _formID
-        }
+    /**
+     * Original initializer used when creating a new form to firebase.
+     *
+     */
+    init(request: Bool, type: String, firstName: String, zipcode: String, message: String, latitude: NSNumber, longitude: NSNumber, postID: String, formDate: NSNumber, submitterUID: String) {
+        self.key = ""
+        self.ref = FIRDatabase.database().reference()
+        self._postID = postID
+        self._formDate = formDate
+        self._submitterUID = submitterUID
+        self._takerUID = ""
+        self._request = request
+        self._type = type
+        //self._specific = specific
+        self._firstName = firstName
+        self._zipcode = zipcode
+        self._message = message
+        self._latitude = latitude
+        self._longitude = longitude
+        self._completed = false
     }
     
-    var requestOrOffer: String {
+    /**
+     * Returns form values in dictionary to be stored in Firebase.
+     *
+     */
+    func toAnyObject() -> [String: Any] {
+        return ["postID": postID, "formDate": formDate, "submitterUID": submitterUID, "takerUID": takerUID, "request": request, "type": type, "firstName": firstName, "zipcode": zipcode, "message": message, "latitude": latitude, "longitude": longitude, "completed": completed]
+    }
+    
+    /** Getters and Setters */
+    var postID: String {
+        return self._postID
+    }
+    
+    var formDate: NSNumber {
+        return self._formDate
+    }
+    
+    var submitterUID: String {
+        return self._submitterUID
+    }
+    
+    var takerUID: String {
+        return self._takerUID
+    }
+    
+    var request: Bool {
         get {
-            return _requestOrOffer
+            return self._request
         }
         set (changeRequest) {
-            _requestOrOffer = changeRequest
+            self._request = changeRequest
         }
     }
     
-    var specificDeed: String {
+    var type: String {
         get {
-            return _specificDeed
+            return self._type
         }
-        set (newSpecificDeed) {
-            _specificDeed = newSpecificDeed
+        set (newType) {
+            self._type = newType
         }
     }
     
-    var pointsAllocated: Int {
+    /*
+    var specific: String {
         get {
-            return _pointsAllocated
+            return self._specific
         }
-        set (newPointsAllocated) {
-            _pointsAllocated = newPointsAllocated
+        set (newspecific) {
+            self._specific = newspecific
         }
-    }
+    }*/
     
     var firstName: String {
         get {
-            return _firstName
+            return self._firstName
         }
         set (newFirstName) {
-            _firstName = newFirstName
+            self._firstName = newFirstName
         }
     }
     
     var zipcode: String {
         get {
-            return _zipcode
+            return self._zipcode
         }
         set (newZipCode) {
-            _zipcode = newZipCode
+            self._zipcode = newZipCode
         }
     }
     
     var message: String {
         get {
-            return _message
+            return self._message
         }
         set (newMessage) {
-            _message = newMessage
+            self._message = newMessage
+        }
+    }
+    
+    var latitude: NSNumber {
+        get {
+            return self._latitude
+        }
+        set (newLatitude) {
+            self._latitude = newLatitude
+        }
+    }
+    
+    var longitude: NSNumber {
+        get {
+            return self._longitude
+        }
+        set (newLongitude) {
+            self._longitude = newLongitude
+        }
+    }
+    
+    var completed: Bool {
+        get {
+            return self._completed
+        }
+        set (newCompleted) {
+            self._completed = newCompleted
         }
     }
 }

@@ -8,10 +8,10 @@
 
 import UIKit
 import CoreData
+import CoreTelephony
 import Firebase
-import FirebaseInstanceID
-import FirebaseMessaging
 import FBSDKLoginKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyDzRdXLqpdVpoUX5GuaoaX4lFMDJTYyifs")
         
         if #available(iOS 8.0, *) {
             let settings: UIUserNotificationSettings =
@@ -39,6 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+    }
+    
+    /**
+     * Brings to map.
+     *
+     */
+    func takeToHome() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "MapVC")
+        self.window?.rootViewController = homeVC
+    }
+    
+    /**
+     * Brings to login.
+     *
+     */
+    func takeToLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        self.window?.rootViewController = loginVC
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

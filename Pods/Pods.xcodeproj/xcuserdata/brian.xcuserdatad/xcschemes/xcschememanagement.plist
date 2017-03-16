@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +45,11 @@
 			<false/>
 		</dict>
 		<key>Pods-good.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,17 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F79EFBF40C83B0720E6E76861ABDE82</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>61DCAA8D32A14B7C44A9CCB80D2794CB</key>
+		<key>572DAE1FE79EE0D59D72A3740D772BF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6D5CEDECD3D8DC52EA507E0431BDA8A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7891E2B724C54EF58FB1692B34F1455C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8BEDF5F7CD2445D06C27A645FCE0F53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>D0581AF7BF4A6DA140D280B19ECC7BFF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1618271B5D051EC90784C2C16707E89</key>
 		<dict>
 			<key>primary</key>
 			<true/>

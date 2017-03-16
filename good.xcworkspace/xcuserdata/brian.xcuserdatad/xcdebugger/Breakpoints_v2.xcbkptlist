@@ -6,102 +6,74 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "good/AppDelegate.swift"
-            timestampString = "504726412.942997"
+            timestampString = "511215403.84749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "good/AppDelegate.swift"
-            timestampString = "504727106.842617"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "good/SignInVC.swift"
-            timestampString = "504732021.317273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10">
+            startingLineNumber = "15"
+            endingLineNumber = "15">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "good.SignInVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; good.SignInVC"
+                  symbolName = "good.AppDelegate.__deallocating_deinit"
                   moduleName = "good"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brian/Documents/good./good/good/SignInVC.swift"
-                  timestampString = "504732022.536185"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "70">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "good.SignInVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; good.SignInVC"
-                  moduleName = "good"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brian/Documents/good./good/good/SignInVC.swift"
-                  timestampString = "504732022.565892"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511167496.556497"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "23">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "good.SignInVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;good.SignInVC&gt;"
+                  symbolName = "good.AppDelegate.init () -&gt; good.AppDelegate"
                   moduleName = "good"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brian/Documents/good./good/good/SignInVC.swift"
-                  timestampString = "504732022.595961"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "good.SignInVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;good.SignInVC&gt;"
-                  moduleName = "good"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brian/Documents/good./good/good/SignInVC.swift"
-                  timestampString = "504732022.610516"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511167496.559565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.AppDelegate.__allocating_init () -&gt; good.AppDelegate"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511167496.563296"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511167496.566289"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -204,7 +176,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "good/SignUpVC.swift"
@@ -213,8 +185,70 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "SignUpVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.SignUpVC.profileImageView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;good.RoundImage&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/SignUpVC.swift"
+                  timestampString = "511078100.292208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.SignUpVC.profileImageView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;good.RoundImage&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/SignUpVC.swift"
+                  timestampString = "511078100.295342"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.SignUpVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; good.SignUpVC"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/SignUpVC.swift"
+                  timestampString = "511078100.297425"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.SignUpVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;good.SignUpVC&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/SignUpVC.swift"
+                  timestampString = "511078100.299183"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -224,28 +258,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "good/SignUpVC.swift"
-            timestampString = "505684205.709843"
+            timestampString = "511079026.171736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "signUpTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "good/MapVC.swift"
-            timestampString = "505769176.639071"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "signOutTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,9 +278,39 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "Form"
-            landmarkType = "14">
+            endingLineNumber = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.Form.init (snapshot : __ObjC.FIRDataSnapshot) -&gt; good.Form"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/Form.swift"
+                  timestampString = "511167496.572096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.Form.init (request : Swift.Bool, type : Swift.String, firstName : Swift.String, zipcode : Swift.String, message : Swift.String, latitude : __ObjC.NSNumber, longitude : __ObjC.NSNumber, postID : Swift.String, formDate : __ObjC.NSNumber, submitterUID : Swift.String) -&gt; good.Form"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/Form.swift"
+                  timestampString = "511167496.573492"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -272,13 +320,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "good/FormVC.swift"
-            timestampString = "506118403.195379"
+            timestampString = "511167494.960134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "FormVC"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.FormVC.requestButton.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;good.AspectFitButton&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/FormVC.swift"
+                  timestampString = "511167496.576188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.FormVC.requestButton.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;good.AspectFitButton&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/FormVC.swift"
+                  timestampString = "511167496.577504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.FormVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; good.FormVC"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/FormVC.swift"
+                  timestampString = "511167496.578781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.FormVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;good.FormVC&gt;"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/FormVC.swift"
+                  timestampString = "511167496.580063"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,14 +397,156 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "good/SignUpVC.swift"
-            timestampString = "506379699.762488"
+            filePath = "good/User.swift"
+            timestampString = "510345374.244811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "User"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "good/FormVC.swift"
+            timestampString = "511167494.960134"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "good/AppDelegate.swift"
+            timestampString = "511215403.84749"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.AppDelegate.__deallocating_deinit"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511079446.648102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.AppDelegate.init () -&gt; good.AppDelegate"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511079446.652106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "good.AppDelegate.__allocating_init () -&gt; good.AppDelegate"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511079446.657037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "good"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brian/Documents/good./good/good/AppDelegate.swift"
+                  timestampString = "511079446.662461"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "good/FormVC.swift"
+            timestampString = "511167494.960134"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "pickerView(_:titleForRow:forComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "good/UserDataService.swift"
+            timestampString = "511152425.758817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "signUpTapped(_:)"
+            landmarkName = "incrementOffers(user:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "good/Coordinate.swift"
+            timestampString = "511323756.02176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "Coordinate"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
