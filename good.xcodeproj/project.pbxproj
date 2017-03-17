@@ -21,7 +21,7 @@
 		D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A79761E1D6E9A00CFF7AC /* MapVC.swift */; };
 		D34F38DD1E778B7100DC7C6C /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DC1E778B7100DC7C6C /* RoundView.swift */; };
 		D34F38DF1E789FB100DC7C6C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DE1E789FB100DC7C6C /* Coordinate.swift */; };
-		D37429311E2ECA2500DA18E4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37429301E2ECA2500DA18E4 /* UserCell.swift */; };
+		D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37429301E2ECA2500DA18E4 /* FormCell.swift */; };
 		D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECC81E255C6A00A3611F /* AuthService.swift */; };
 		D378ECCC1E25D2FB00A3611F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECCB1E25D2FB00A3611F /* User.swift */; };
 		D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39137141E1D8033001526B1 /* ProfileVC.swift */; };
@@ -57,7 +57,7 @@
 		D34A79761E1D6E9A00CFF7AC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		D34F38DC1E778B7100DC7C6C /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		D34F38DE1E789FB100DC7C6C /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		D37429301E2ECA2500DA18E4 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D37429301E2ECA2500DA18E4 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
 		D378ECC81E255C6A00A3611F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D378ECCB1E25D2FB00A3611F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D39137141E1D8033001526B1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				D30D8DB01E15B96600E1FA7E /* RoundImage.swift */,
 				D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */,
-				D37429301E2ECA2500DA18E4 /* UserCell.swift */,
+				D37429301E2ECA2500DA18E4 /* FormCell.swift */,
 				D34334131E766DF20091DB69 /* RoundLabel.swift */,
 				D34F38DC1E778B7100DC7C6C /* RoundView.swift */,
 			);
@@ -410,7 +410,7 @@
 				D3C8576D1E2A89F300DDA3D5 /* Form.swift in Sources */,
 				D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtensions.swift in Sources */,
 				D391371B1E1DEE3E001526B1 /* SignUpVC.swift in Sources */,
-				D37429311E2ECA2500DA18E4 /* UserCell.swift in Sources */,
+				D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */,
 				D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */,
 				D30D8DA81E158D3E00E1FA7E /* SignInVC.swift in Sources */,
 				D378ECCC1E25D2FB00A3611F /* User.swift in Sources */,

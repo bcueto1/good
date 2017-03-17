@@ -161,12 +161,14 @@ extension MapVC {
         formsRef.observe(.value, with: { (forms) in
             var resultArray = [Form]()
             for form in forms.children {
-                let form = Form(snapshot: form as! FIRDataSnapshot)
+                let newForm = Form(snapshot: form as! FIRDataSnapshot)
                 
-                resultArray.append(form)
+                resultArray.append(newForm)
             }
             self.formArray = resultArray
-        })
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     /**

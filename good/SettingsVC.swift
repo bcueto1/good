@@ -40,7 +40,9 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         if self.editNameField.text != "" {
             self.userDataService.updateUserName(user: currentUser, firstName: self.editNameField.text!)
         }
-        self.userDataService.updateProfilePicture(user: currentUser, pictureData: data!)
+        if self.profileImageView.image != UIImage(named: "tempProPic") {
+            self.userDataService.updateProfilePicture(user: currentUser, pictureData: data!)
+        }
         performSegue(withIdentifier: "settingsToProfile", sender: nil)
         
     }
