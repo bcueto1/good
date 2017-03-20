@@ -19,6 +19,9 @@
 		D34873C01E1314F50083331C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34873BF1E1314F50083331C /* Assets.xcassets */; };
 		D34873C31E1314F50083331C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34873C11E1314F50083331C /* LaunchScreen.storyboard */; };
 		D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A79761E1D6E9A00CFF7AC /* MapVC.swift */; };
+		D34BE9031E7BA32D00C92B1A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BE9021E7BA32D00C92B1A /* Message.swift */; };
+		D34BE9051E7CB36B00C92B1A /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BE9041E7CB36B00C92B1A /* ChatRoom.swift */; };
+		D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BE9061E7D820A00C92B1A /* ChatFunctions.swift */; };
 		D34F38DD1E778B7100DC7C6C /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DC1E778B7100DC7C6C /* RoundView.swift */; };
 		D34F38DF1E789FB100DC7C6C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DE1E789FB100DC7C6C /* Coordinate.swift */; };
 		D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37429301E2ECA2500DA18E4 /* FormCell.swift */; };
@@ -55,6 +58,9 @@
 		D34873C21E1314F50083331C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D34873C41E1314F50083331C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D34A79761E1D6E9A00CFF7AC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		D34BE9021E7BA32D00C92B1A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D34BE9041E7CB36B00C92B1A /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		D34BE9061E7D820A00C92B1A /* ChatFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFunctions.swift; sourceTree = "<group>"; };
 		D34F38DC1E778B7100DC7C6C /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		D34F38DE1E789FB100DC7C6C /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		D37429301E2ECA2500DA18E4 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
@@ -184,6 +190,9 @@
 				D378ECCB1E25D2FB00A3611F /* User.swift */,
 				D3C8576C1E2A89F300DDA3D5 /* Form.swift */,
 				D34F38DE1E789FB100DC7C6C /* Coordinate.swift */,
+				D34BE9021E7BA32D00C92B1A /* Message.swift */,
+				D34BE9041E7CB36B00C92B1A /* ChatRoom.swift */,
+				D34BE9061E7D820A00C92B1A /* ChatFunctions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -417,10 +426,13 @@
 				D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */,
 				D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */,
 				D3C074CF1E17154000BCC927 /* Constants.swift in Sources */,
+				D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */,
 				D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */,
+				D34BE9051E7CB36B00C92B1A /* ChatRoom.swift in Sources */,
 				D391371D1E1DF5CB001526B1 /* FormVC.swift in Sources */,
 				D30D8DB11E15B96600E1FA7E /* RoundImage.swift in Sources */,
 				D34873B61E1314F50083331C /* AppDelegate.swift in Sources */,
+				D34BE9031E7BA32D00C92B1A /* Message.swift in Sources */,
 				D39137171E1D804A001526B1 /* MessagingVC.swift in Sources */,
 				D3FDC6C91E2EB23500F12A8A /* UserDataService.swift in Sources */,
 			);

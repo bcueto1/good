@@ -18,19 +18,21 @@ import FirebaseDatabase
 struct Form {
     
     /** private variables */
-    private var _request: Bool
-    private var _type: String
-    //private var _specific: String
-    private var _firstName: String
-    private var _zipcode: String
-    private var _message: String
-    private var _postID: String
-    private var _formDate: NSNumber
-    private var _submitterUID: String
-    private var _takerUID: String
-    private var _latitude: NSNumber
-    private var _longitude: NSNumber
-    private var _completed: Bool
+    private var _request: Bool!
+    private var _type: String!
+    //private var _specific: String!
+    private var _firstName: String!
+    private var _zipcode: String!
+    private var _message: String!
+    private var _postID: String!
+    private var _formDate: NSNumber!
+    private var _submitterUID: String!
+    private var _takerUID: String!
+    private var _latitude: NSNumber!
+    private var _longitude: NSNumber!
+    private var _completed: Bool!
+    private var _doneBySubmitter: Bool!
+    private var _doneByTaker: Bool!
     private var ref: FIRDatabaseReference!
     private var key: String?
     
@@ -54,6 +56,8 @@ struct Form {
         self._latitude = (snapshot.value! as! NSDictionary)["latitude"] as! NSNumber
         self._longitude = (snapshot.value! as! NSDictionary)["longitude"] as! NSNumber
         self._completed = (snapshot.value! as! NSDictionary)["completed"] as! Bool
+        self._doneBySubmitter = (snapshot.value! as! NSDictionary)["doneBySubmitter"] as! Bool
+        self._doneByTaker = (snapshot.value! as! NSDictionary)["doneByTaker"] as! Bool
     }
     
     /**
@@ -76,6 +80,8 @@ struct Form {
         self._latitude = latitude
         self._longitude = longitude
         self._completed = false
+        self._doneBySubmitter = false
+        self._doneByTaker = false
     }
     
     /**
@@ -83,7 +89,7 @@ struct Form {
      *
      */
     func toAnyObject() -> [String: Any] {
-        return ["postID": postID, "formDate": formDate, "submitterUID": submitterUID, "takerUID": takerUID, "request": request, "type": type, "firstName": firstName, "zipcode": zipcode, "message": message, "latitude": latitude, "longitude": longitude, "completed": completed]
+        return ["postID": postID, "formDate": formDate, "submitterUID": submitterUID, "takerUID": takerUID, "request": request, "type": type, "firstName": firstName, "zipcode": zipcode, "message": message, "latitude": latitude, "longitude": longitude, "completed": completed, "doneBySubmitter": doneBySubmitter, "doneByTaker": doneByTaker]
     }
     
     /** Getters and Setters */
@@ -182,6 +188,24 @@ struct Form {
         }
         set (newCompleted) {
             self._completed = newCompleted
+        }
+    }
+    
+    var doneBySubmitter: Bool {
+        get {
+            return self._doneBySubmitter
+        }
+        set (newDone) {
+            self._doneBySubmitter = newDone
+        }
+    }
+    
+    var doneByTaker: Bool {
+        get {
+            return self._doneByTaker
+        }
+        set (newDone) {
+            self._doneByTaker = newDone
         }
     }
 }

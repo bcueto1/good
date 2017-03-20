@@ -18,16 +18,16 @@ import FirebaseDatabase
 struct User {
     
     /** private variables */
-    private var _firstName: String
-    private var _email: String
-    private var _rating: NSNumber
-    private var _points: Int
-    private var _offers: Int
-    private var _requests: Int
-    private var _weeklyOffers: Int
-    private var _weeklyRequests: Int
-    private var _uid: String
-    private var _profilePicURL: String
+    private var _firstName: String!
+    private var _email: String!
+    private var _rating: NSNumber!
+    private var _points: Int!
+    private var _offers: Int!
+    private var _requests: Int!
+    private var _weeklyOffers: Int!
+    private var _weeklyRequests: Int!
+    private var _uid: String!
+    private var _profilePicURL: String!
     private var ref: FIRDatabaseReference!
     private var key: String?
     
