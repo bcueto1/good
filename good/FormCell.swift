@@ -15,7 +15,7 @@ class FormCell: UITableViewCell {
     
     /** Outlets */
     @IBOutlet weak var firstNameLbl: UILabel!
-    @IBOutlet weak var userPicture: UIImageView!
+    @IBOutlet weak var userPicture: RoundImage!
     @IBOutlet weak var checkmarkImage: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

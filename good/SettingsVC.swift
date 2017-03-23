@@ -18,7 +18,8 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     /** Outlets */
     @IBOutlet weak var editNameField: UITextField!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: RoundImage!
+    @IBOutlet weak var saveButton: AspectFitButton!
     
     /** User data service reference */
     var userDataService = UserDataService()
@@ -26,7 +27,6 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
     }
     
     /**

@@ -15,6 +15,7 @@ struct ChatRoom {
     var _otherUsername: String!
     var _userID: String!
     var _otherID: String!
+    var _formID: String!
     var _members: [String]!
     var _chatRoomID: String!
     var _lastMessage: String!
@@ -28,6 +29,7 @@ struct ChatRoom {
         self._otherUsername = (snapshot.value! as! NSDictionary)["otherUsername"] as! String
         self._userID = (snapshot.value! as! NSDictionary)["userID"] as! String
         self._otherID = (snapshot.value! as! NSDictionary)["otherID"] as! String
+        self._formID = (snapshot.value! as! NSDictionary)["formID"] as! String
         self._members = (snapshot.value! as! NSDictionary)["members"] as! [String]
         self._chatRoomID = (snapshot.value! as! NSDictionary)["chatRoomID"] as! String
         self._lastMessage = (snapshot.value! as! NSDictionary)["lastMessage"] as! String
@@ -37,11 +39,12 @@ struct ChatRoom {
         self.key = snapshot.key
     }
     
-    init(username: String, otherUsername: String, userID: String, otherID: String, members: [String], chatRoomID: String, lastMessage: String, userPhotoURL: String, otherPhotoURL: String) {
+    init(username: String, otherUsername: String, userID: String, otherID: String, formID: String, members: [String], chatRoomID: String, lastMessage: String, userPhotoURL: String, otherPhotoURL: String) {
         self._username = username
         self._otherUsername = otherUsername
         self._userID = userID
         self._otherID = otherID
+        self._formID = formID
         self._members = members
         self._chatRoomID = chatRoomID
         self._lastMessage = lastMessage
@@ -50,7 +53,7 @@ struct ChatRoom {
     }
     
     func toAnyObject() -> [String: Any] {
-        return ["username": username, "otherUsername": otherUsername, "userID": userID, "otherID": otherID, "members": members, "chatRoomID": chatRoomID, "lastMessage": lastMessage, "userPhotoURL": userPhotoURL, "otherPhotoURL": otherPhotoURL]
+        return ["username": username, "otherUsername": otherUsername, "userID": userID, "otherID": otherID, "formID": formID, "members": members, "chatRoomID": chatRoomID, "lastMessage": lastMessage, "userPhotoURL": userPhotoURL, "otherPhotoURL": otherPhotoURL]
     }
     
     
@@ -69,6 +72,10 @@ struct ChatRoom {
     
     var otherID: String {
         return self._otherID
+    }
+    
+    var formID: String {
+        return self._formID
     }
     
     var members: [String] {

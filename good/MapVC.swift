@@ -30,6 +30,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var formService = FormDataService()
     /** User Data Service */
     var userService = UserDataService()
+    /** Chat Functions */
+    var chatService = ChatFunctions()
     /** Reference to database */
     var dataBaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
@@ -124,6 +126,8 @@ extension MapVC {
                     } else {
                         self.userService.addNewRequestForm(user: user, form: form!)
                     }
+                    
+                    self.chatService.startChat(form: form!)
                     mapView.removeAnnotation(view.annotation!)
                 })
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -155,7 +159,6 @@ extension MapVC {
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegionMake(coordinations, span)
         self.mapView.setRegion(region, animated: true)
-        //self.createAnnotations()
     }
     
     /**

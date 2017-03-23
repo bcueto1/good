@@ -24,6 +24,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var reenterPasswordTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImageView: RoundImage!
+    @IBOutlet weak var signUpButton: AspectFitButton!
     
 
     /** Auth Service */

@@ -174,6 +174,10 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func fetchChat(form: Form) {
+        
+    }
+    
     /**
      * Function to add points.  This is a bit buggy and needs some work on.
      *

@@ -11,31 +11,26 @@ import Firebase
 
 struct ChatFunctions {
     
-    var thisChatRoomID = String()
-    
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
-    mutating func startChat(user1: User, user2: User) {
-        let userID1 = user1.uid
-        let userID2 = user2.uid
-        
-        var tempID = ""
-        
-        let comparison = userID1.compare(userID2).rawValue
-        
-        let members = [user1.firstName, user2.firstName]
-        
-        if comparison < 0 {
-            tempID = userID1.appending(userID2)
-        } else {
-            tempID = userID2.appending(userID1)
+    func startChat(form: Form) {
+        let usersRef = self.databaseRef.child("users")
+        let submitterRef = usersRef.child(form.submitterUID)
+        let takerRef = usersRef.child(form.takerUID)
+        submitterRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let submitter = User(snapshot: snapshot)
+            takerRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                let taker = User(snapshot: snapshot)
+                let members = [submitter.firstName, taker.firstName]
+                self.createChatRoomID(user1: submitter, user2: taker, members: members, chatRoomID: form.postID)
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
-        
-        self.thisChatRoomID = tempID
-        self.createChatRoomID(user1: user1, user2: user2, members: members, chatRoomID: tempID)
-        
     }
     
     func createChatRoomID(user1: User, user2: User, members: [String], chatRoomID: String) {
@@ -68,7 +63,7 @@ struct ChatFunctions {
     
     func createNewChatRoomID(username: String, otherUsername: String, userID: String, otherID: String, members: [String], chatRoomID: String, lastMessage: String, userPhotoURL: String, otherPhotoURL: String) {
         
-        let newChatRoom = ChatRoom(username: username, otherUsername: otherUsername, userID: userID, otherID: otherID, members: members, chatRoomID: chatRoomID, lastMessage: lastMessage, userPhotoURL: userPhotoURL, otherPhotoURL: otherPhotoURL)
+        let newChatRoom = ChatRoom(username: username, otherUsername: otherUsername, userID: userID, otherID: otherID, formID: chatRoomID, members: members, chatRoomID: chatRoomID, lastMessage: lastMessage, userPhotoURL: userPhotoURL, otherPhotoURL: otherPhotoURL)
         
         let chatRoomRef = databaseRef.child("ChatRooms").child(chatRoomID)
         chatRoomRef.setValue(newChatRoom.toAnyObject())

@@ -19,6 +19,7 @@ class SignInVC: UIViewController {
     /** Outlets */
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: AspectFitButton?
     
     /** Auth Service */
     var authService = AuthService()

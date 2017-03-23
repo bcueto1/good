@@ -22,6 +22,8 @@ class FormVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     //@IBOutlet weak var specificsField: UILabel!
     @IBOutlet weak var typeDropdown: UIPickerView!
     //@IBOutlet weak var specificsDropdown: UIPickerView!
+    @IBOutlet weak var cancelButton: AspectFitButton!
+    @IBOutlet weak var confirmButton: AspectFitButton!
     
     /** Variables */
     var good : String = ""
@@ -39,6 +41,7 @@ class FormVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
         
         // Startup for map
         locationManager.delegate = self

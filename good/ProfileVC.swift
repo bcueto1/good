@@ -16,13 +16,14 @@ import Firebase
 class ProfileVC: UIViewController {
 
     /** Outlets */
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profilePicture: RoundImage!
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var myPoints: UILabel!
     @IBOutlet weak var yourWeeklyOffers: UILabel!
     @IBOutlet weak var yourWeeklyRequests: UILabel!
     @IBOutlet weak var yourOffers: UILabel!
     @IBOutlet weak var yourRequests: UILabel!
+    @IBOutlet weak var settingsButton: AspectFitButton!
     
     /** Rating */
     private var myRating: Double!
