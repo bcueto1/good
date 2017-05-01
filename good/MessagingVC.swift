@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import HMSegmentedControl
 
+/**
+ * Shows the a segmented controller that divides request and offers.
+ *
+ */
 class MessagingVC: UIViewController {
     
     /** Outlets */
@@ -17,11 +21,14 @@ class MessagingVC: UIViewController {
     
     var requestsArray = [Form]()
     var offersArray = [Form]()
-    var chatsArray = [ChatRoom]()
+    var selectedIndex: Int!
+    var currentUserFirstName: String!
     
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
+    
+    var chatFunctions = ChatFunctions()
     
     /**
      * Segemented control.  Used this to differentiate between offers and request tables.
@@ -31,9 +38,9 @@ class MessagingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadUserInfo()
         
         self.fetchAllUserPosts()
-        //self.addPointsToFinishedTasks()
         self.setSegmentedControl()
     }
     
@@ -53,7 +60,7 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
         self.segmentedControl = HMSegmentedControl(frame: CGRect(x: 0, y: 65, width: self.view.frame.size.width, height: 60))
         self.segmentedControl.sectionTitles = ["Requests", "Offers"]
         self.segmentedControl.backgroundColor = UIColor(red:0.20, green:0.40, blue:0.80, alpha:1.0)
-        self.segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:0.80, blue:0.00, alpha:1.0), NSFontAttributeName: UIFont(name:"ChalkboardSE-Bold", size: 17)!]
+        self.segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:0.80, blue:0.00, alpha:1.0), NSFontAttributeName: UIFont(name:"Avenir-Heavy", size: 17)!]
         self.segmentedControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.segmentedControl.selectionIndicatorColor = UIColor(red:1, green: 1, blue: 1, alpha: 0.5)
         self.segmentedControl.selectionStyle = .fullWidthStripe
@@ -132,15 +139,85 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "messagesToChat", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "messagesToChat") {
+            let chatController = segue.destination as! ChatParentVC
+            if self.segmentedControl.selectedSegmentIndex == 0 {
+                let chatForm = self.requestsArray[self.selectedIndex]
+                chatController.formID = chatForm.postID
+                chatController.userFirstName = self.currentUserFirstName
+                self.chatFunctions.startChat(form: chatForm)
+            } else {
+                let chatForm = self.offersArray[self.selectedIndex]
+                chatController.formID = chatForm.postID
+                chatController.userFirstName = self.currentUserFirstName
+                self.chatFunctions.startChat(form: chatForm)
+            }
+        }
+    }
+    
+    
     /**
-     * Fetches all the current users requests/offers.  Will optimize this later.
+     * Fetches all the current users requests/offers.
      *
      */
     func fetchAllUserPosts() {
         let currentUser = FIRAuth.auth()!.currentUser!
         let formsRef = databaseRef.child("forms")
-        //let requestsRef = databaseRef.child("users").child(currentUser.uid).child("myForms").child("myRequests")
-        //let offersRef = databaseRef.child("users").child(currentUser.uid).child("myForms").child("myOffers")
+
+        //let userFormsRef = self.databaseRef.child("users").child(currentUser.uid).child("myForms")
+        
+        /*
+        userFormsRef.observe(.value, with: { (snapshot) in
+            var requestIDs = [String]()
+            var offerIDs = [String]()
+            var requestResultArray = [Form]()
+            var offerResultArray = [Form]()
+            
+            
+            let requests = (snapshot.value! as! NSDictionary)["myRequests"] as! [String : String]
+            for rID in requests {
+                requestIDs.append(rID.value)
+            }
+            for id in requestIDs {
+                let formRef = self.databaseRef.child("forms").child(id)
+                
+                formRef.observe(.value, with: { (form) in
+                    let newForm = Form(snapshot: form)
+                    
+                    requestResultArray.append(newForm)
+                    self.requestsArray = requestResultArray
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+            }
+            
+            let offers = (snapshot.value! as! NSDictionary)["myOffers"] as! [String : String]
+            for oID in offers {
+                offerIDs.append(oID.value)
+            }
+            for id in offerIDs {
+                let formRef = self.databaseRef.child("forms").child(id)
+                
+                formRef.observe(.value, with: { (form) in
+                    let newForm = Form(snapshot: form)
+                    
+                    offerResultArray.append(newForm)
+                    self.offersArray = offerResultArray
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        } */
+        
         
         formsRef.observe(.value, with: { (forms) in
             var requestResultArray = [Form]()
@@ -166,7 +243,6 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
             
             self.requestsArray = requestResultArray
             self.offersArray = offerResultArray
-            //self.addPointsToFinishedTasks()
             self.tableView.reloadData()
             
         }) { (error) in
@@ -174,63 +250,19 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func fetchChat(form: Form) {
-        
-    }
-    
-    /**
-     * Function to add points.  This is a bit buggy and needs some work on.
-     *
-     */
-    func addPointsToFinishedTasks() {
+    func loadUserInfo() {
         let currentUser = FIRAuth.auth()!.currentUser!
-        for form in self.requestsArray {
-            if form.doneBySubmitter && form.doneByTaker && !form.completed {
-                databaseRef.child("forms").child(form.postID).child("completed").setValue(true)
-                
-                if (form.submitterUID == currentUser.uid) {
-                    let otherUser = databaseRef.child("users").child(form.takerUID)
-                    otherUser.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let points = ((snapshot.value! as! NSDictionary)["points"] as! Int) + 1
-                        otherUser.child("points").setValue(points)
-                    }) { (error) in
-                        print(error.localizedDescription)
-                    }
-                } else {
-                    let user = databaseRef.child("users").child(form.submitterUID)
-                    user.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let points = ((snapshot.value! as! NSDictionary)["points"] as! Int) + 1
-                        user.child("points").setValue(points)
-                    }) { (error) in
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
+        let userRef = databaseRef.child("users").child(currentUser.uid)
         
-        for form in self.offersArray {
-            if (form.doneBySubmitter) && (form.doneByTaker) && (!form.completed) {
-                databaseRef.child("forms").child(form.postID).child("completed").setValue(true)
-                if (form.submitterUID == currentUser.uid) {
-                    let user = databaseRef.child("users").child(form.submitterUID)
-                    user.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let points = ((snapshot.value! as! NSDictionary)["points"] as! Int) + 1
-                        user.child("points").setValue(points)
-                    }) { (error) in
-                        print(error.localizedDescription)
-                    }
-                } else {
-                    let otherUser = databaseRef.child("users").child(form.takerUID)
-                    otherUser.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let points = ((snapshot.value! as! NSDictionary)["points"] as! Int) + 1
-                        otherUser.child("points").setValue(points)
-                    }) { (error) in
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
+        userRef.observeSingleEvent(of: .value, with: { (currentUser) in
             
+            let user = User(snapshot: currentUser)
+            self.currentUserFirstName = user.firstName
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
+
     
 }

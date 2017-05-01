@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationUsageDescription</key>
-	<string></string>
+	<string>allow location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>allow location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>allow location</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Allow camera usage</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Set the background</string>
 	<key>LSApplicationQueriesSchemes</key>

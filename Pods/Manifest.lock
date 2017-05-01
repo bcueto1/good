@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Cosmos (7.0.0)
   - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.18.0):
@@ -82,6 +83,7 @@ PODS:
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
+  - Cosmos
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Firebase
@@ -99,6 +101,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
@@ -121,6 +124,6 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 644cf42c2fff5533370a6b3cabd632945b3adc4e
+PODFILE CHECKSUM: fd3d3d4699e8e706c4576b78412af057e1faf9a3
 
 COCOAPODS: 1.1.1

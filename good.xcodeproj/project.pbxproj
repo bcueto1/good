@@ -13,6 +13,8 @@
 		D30D8DB31E15D4E500E1FA7E /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */; };
 		D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */; };
 		D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34334131E766DF20091DB69 /* RoundLabel.swift */; };
+		D347EA4C1EB2799800937355 /* ChatParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347EA4B1EB2799800937355 /* ChatParentVC.swift */; };
+		D347EA4E1EB3B6BC00937355 /* SocialInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */; };
 		D34873B61E1314F50083331C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34873B51E1314F50083331C /* AppDelegate.swift */; };
 		D34873BB1E1314F50083331C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34873B91E1314F50083331C /* Main.storyboard */; };
 		D34873BE1E1314F50083331C /* good.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D34873BC1E1314F50083331C /* good.xcdatamodeld */; };
@@ -24,6 +26,10 @@
 		D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BE9061E7D820A00C92B1A /* ChatFunctions.swift */; };
 		D34F38DD1E778B7100DC7C6C /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DC1E778B7100DC7C6C /* RoundView.swift */; };
 		D34F38DF1E789FB100DC7C6C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F38DE1E789FB100DC7C6C /* Coordinate.swift */; };
+		D3706B5F1EAE859C00C73882 /* FormInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3706B5E1EAE859C00C73882 /* FormInfoVC.swift */; };
+		D3706B611EAE85C700C73882 /* FormTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3706B601EAE85C700C73882 /* FormTypeVC.swift */; };
+		D3706B631EAE85EE00C73882 /* FormSpecificVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3706B621EAE85EE00C73882 /* FormSpecificVC.swift */; };
+		D3706B651EAE85FF00C73882 /* FormEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3706B641EAE85FF00C73882 /* FormEnterVC.swift */; };
 		D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37429301E2ECA2500DA18E4 /* FormCell.swift */; };
 		D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECC81E255C6A00A3611F /* AuthService.swift */; };
 		D378ECCC1E25D2FB00A3611F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378ECCB1E25D2FB00A3611F /* User.swift */; };
@@ -50,6 +56,8 @@
 		D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectFitButton.swift; sourceTree = "<group>"; };
 		D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		D34334131E766DF20091DB69 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
+		D347EA4B1EB2799800937355 /* ChatParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatParentVC.swift; sourceTree = "<group>"; };
+		D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialInfoVC.swift; sourceTree = "<group>"; };
 		D34873B21E1314F50083331C /* good.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = good.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34873B51E1314F50083331C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34873BA1E1314F50083331C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 		D34BE9061E7D820A00C92B1A /* ChatFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFunctions.swift; sourceTree = "<group>"; };
 		D34F38DC1E778B7100DC7C6C /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		D34F38DE1E789FB100DC7C6C /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		D3706B5E1EAE859C00C73882 /* FormInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInfoVC.swift; sourceTree = "<group>"; };
+		D3706B601EAE85C700C73882 /* FormTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTypeVC.swift; sourceTree = "<group>"; };
+		D3706B621EAE85EE00C73882 /* FormSpecificVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSpecificVC.swift; sourceTree = "<group>"; };
+		D3706B641EAE85FF00C73882 /* FormEnterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormEnterVC.swift; sourceTree = "<group>"; };
 		D37429301E2ECA2500DA18E4 /* FormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
 		D378ECC81E255C6A00A3611F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D378ECCB1E25D2FB00A3611F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -134,8 +146,9 @@
 		D30D8DA41E157AD600E1FA7E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3706B5D1EAE82C500C73882 /* FormVCs */,
 				D3EF81A51E70B9FD006F70F8 /* SocialVCs */,
-				D3EF81A41E70B9D5006F70F8 /* HomeMapFormVCs */,
+				D3EF81A41E70B9D5006F70F8 /* MapVCs */,
 				D3EF81A31E709EAE006F70F8 /* ProfileVCs */,
 				D3EF81A21E709E9A006F70F8 /* AuthenticationVCs */,
 			);
@@ -181,6 +194,18 @@
 				D34873B51E1314F50083331C /* AppDelegate.swift */,
 			);
 			path = good;
+			sourceTree = "<group>";
+		};
+		D3706B5D1EAE82C500C73882 /* FormVCs */ = {
+			isa = PBXGroup;
+			children = (
+				D391371C1E1DF5CB001526B1 /* FormVC.swift */,
+				D3706B5E1EAE859C00C73882 /* FormInfoVC.swift */,
+				D3706B601EAE85C700C73882 /* FormTypeVC.swift */,
+				D3706B621EAE85EE00C73882 /* FormSpecificVC.swift */,
+				D3706B641EAE85FF00C73882 /* FormEnterVC.swift */,
+			);
+			name = FormVCs;
 			sourceTree = "<group>";
 		};
 		D378ECCA1E25D2C000A3611F /* Models */ = {
@@ -246,13 +271,12 @@
 			name = ProfileVCs;
 			sourceTree = "<group>";
 		};
-		D3EF81A41E70B9D5006F70F8 /* HomeMapFormVCs */ = {
+		D3EF81A41E70B9D5006F70F8 /* MapVCs */ = {
 			isa = PBXGroup;
 			children = (
 				D34A79761E1D6E9A00CFF7AC /* MapVC.swift */,
-				D391371C1E1DF5CB001526B1 /* FormVC.swift */,
 			);
-			name = HomeMapFormVCs;
+			name = MapVCs;
 			sourceTree = "<group>";
 		};
 		D3EF81A51E70B9FD006F70F8 /* SocialVCs */ = {
@@ -260,6 +284,8 @@
 			children = (
 				D39137161E1D804A001526B1 /* MessagingVC.swift */,
 				D3FDC6CA1E2EB3A500F12A8A /* ChatVC.swift */,
+				D347EA4B1EB2799800937355 /* ChatParentVC.swift */,
+				D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */,
 			);
 			name = SocialVCs;
 			sourceTree = "<group>";
@@ -414,16 +440,21 @@
 				D3FDC6CB1E2EB3A500F12A8A /* ChatVC.swift in Sources */,
 				D34873BE1E1314F50083331C /* good.xcdatamodeld in Sources */,
 				D34F38DF1E789FB100DC7C6C /* Coordinate.swift in Sources */,
+				D3706B651EAE85FF00C73882 /* FormEnterVC.swift in Sources */,
+				D347EA4C1EB2799800937355 /* ChatParentVC.swift in Sources */,
 				D3EF81A01E6DF2F6006F70F8 /* FormDataService.swift in Sources */,
+				D3706B611EAE85C700C73882 /* FormTypeVC.swift in Sources */,
 				D30D8DB31E15D4E500E1FA7E /* AspectFitButton.swift in Sources */,
 				D3C8576D1E2A89F300DDA3D5 /* Form.swift in Sources */,
 				D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtensions.swift in Sources */,
 				D391371B1E1DEE3E001526B1 /* SignUpVC.swift in Sources */,
+				D347EA4E1EB3B6BC00937355 /* SocialInfoVC.swift in Sources */,
 				D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */,
 				D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */,
 				D30D8DA81E158D3E00E1FA7E /* SignInVC.swift in Sources */,
 				D378ECCC1E25D2FB00A3611F /* User.swift in Sources */,
 				D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */,
+				D3706B631EAE85EE00C73882 /* FormSpecificVC.swift in Sources */,
 				D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */,
 				D3C074CF1E17154000BCC927 /* Constants.swift in Sources */,
 				D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */,
@@ -433,6 +464,7 @@
 				D30D8DB11E15B96600E1FA7E /* RoundImage.swift in Sources */,
 				D34873B61E1314F50083331C /* AppDelegate.swift in Sources */,
 				D34BE9031E7BA32D00C92B1A /* Message.swift in Sources */,
+				D3706B5F1EAE859C00C73882 /* FormInfoVC.swift in Sources */,
 				D39137171E1D804A001526B1 /* MessagingVC.swift in Sources */,
 				D3FDC6C91E2EB23500F12A8A /* UserDataService.swift in Sources */,
 			);

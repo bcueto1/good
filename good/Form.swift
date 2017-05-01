@@ -47,7 +47,7 @@ struct Form {
         self._formDate = ((snapshot.value! as! NSDictionary)["formDate"] as? NSNumber)!
         self._submitterUID = ((snapshot.value! as! NSDictionary)["submitterUID"] as? String)!
         self._takerUID = ((snapshot.value! as! NSDictionary)["takerUID"] as? String)!
-        self._request = (snapshot.value! as! NSDictionary)["request"] as! Bool
+        self._request = ((snapshot.value! as! NSDictionary)["request"] as? Bool)!
         self._type = (snapshot.value! as! NSDictionary)["type"] as! String
         //self._specific = (snapshot.value! as! NSDictionary)["specific"] as! String
         self._firstName = (snapshot.value! as! NSDictionary)["firstName"] as! String
@@ -55,9 +55,9 @@ struct Form {
         self._message = (snapshot.value! as! NSDictionary)["message"] as! String
         self._latitude = (snapshot.value! as! NSDictionary)["latitude"] as! NSNumber
         self._longitude = (snapshot.value! as! NSDictionary)["longitude"] as! NSNumber
-        self._completed = (snapshot.value! as! NSDictionary)["completed"] as! Bool
-        self._doneBySubmitter = (snapshot.value! as! NSDictionary)["doneBySubmitter"] as! Bool
-        self._doneByTaker = (snapshot.value! as! NSDictionary)["doneByTaker"] as! Bool
+        self._completed = ((snapshot.value! as! NSDictionary)["completed"] as? Bool)!
+        self._doneBySubmitter = ((snapshot.value! as! NSDictionary)["doneBySubmitter"] as? Bool)!
+        self._doneByTaker = ((snapshot.value! as! NSDictionary)["doneByTaker"] as? Bool)!
     }
     
     /**

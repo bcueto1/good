@@ -19,9 +19,7 @@ class FormVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var typeOfGoodField: UITextField!
-    //@IBOutlet weak var specificsField: UILabel!
     @IBOutlet weak var typeDropdown: UIPickerView!
-    //@IBOutlet weak var specificsDropdown: UIPickerView!
     @IBOutlet weak var cancelButton: AspectFitButton!
     @IBOutlet weak var confirmButton: AspectFitButton!
     
@@ -30,7 +28,6 @@ class FormVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     var isRequest : Bool = false
     var latitude: NSNumber = 0.0
     var longitude: NSNumber = 0.0
-    //var specifics : String = ""
     
     /** Form service */
     var formService = FormDataService()
@@ -86,11 +83,11 @@ class FormVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
      *
      */
     @IBAction func continueTapped(_ sender: Any) {
-        self.handleErrors()
-        
-        formService.createNewForm(request: self.isRequest, type: self.typeOfGoodField.text!, firstName: self.nameTextField.text!, zipcode: self.zipcodeTextField.text!, message: self.messageTextView.text!, latitude: self.latitude, longitude: self.longitude)
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        appDel.takeToHome()
+        if self.handleErrors() {
+            formService.createNewForm(request: self.isRequest, type: self.typeOfGoodField.text!, firstName: self.nameTextField.text!, zipcode: self.zipcodeTextField.text!, message: self.messageTextView.text!, latitude: self.latitude, longitude: self.longitude)
+            let appDel = UIApplication.shared.delegate as! AppDelegate
+            appDel.takeToHome()
+        }
     }
     
 }
@@ -131,12 +128,7 @@ extension FormVC {
      */
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         let countRows: Int = goods.count
-        /*
-        if pickerView == specificsDropdown {
-            if goodsSpecifics[self.good] != nil {
-                countRows = (goodsSpecifics[self.good]?.count)!
-            }
-        } */
+
         
         return countRows
     }
@@ -151,11 +143,7 @@ extension FormVC {
             let titleRow = goods[row]
             return titleRow
         }
-        /*else if pickerView == specificsDropdown {
-            if let titleRow = goodsSpecifics[self.good]?[row] {
-                return titleRow
-            }
-        }*/
+
         return ""
     }
     
@@ -168,14 +156,9 @@ extension FormVC {
             self.typeOfGoodField.text = goods[row]
             self.good = goods[row]
             self.typeDropdown.isHidden = true
-            //self.specificsField.isHidden = false
             
         }
-        /*else if pickerView == specificsDropdown {
-            self.specificsField.text = goodsSpecifics[self.good]?[row]
-            self.specificsDropdown.isHidden = true
-            self.messageTextView.isHidden = false
-        }*/
+
     }
     
     /**
@@ -185,109 +168,101 @@ extension FormVC {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == self.typeOfGoodField) {
             self.typeDropdown.isHidden = false
-            //self.specificsField.isHidden = true
-            //self.messageTextView.isHidden = true
+
         }
-        /*else if (textField == self.specificsField) {
-            self.specificsDropdown.isHidden = false
-            self.messageTextView.isHidden = true
-        }*/
+
     }
     
     /**
      * Calls all the error functions.
      *
      */
-    func handleErrors() {
-        self.enterTypeOfForm()
-        self.enterName()
-        self.enterZipcode()
-        self.enterType()
-        //self.enterSpecifics()
-        self.enterMessage()
+    func handleErrors() -> Bool {
+        if (self.enterTypeOfForm() && self.enterName() && self.enterZipcode() && self.enterMessage() && self.enterType()) {
+            return true
+        }
+        return false
     }
     
     /**
      * Throws an error if neither request nor offer were tapped.
      *
      */
-    func enterTypeOfForm() {
+    func enterTypeOfForm() -> Bool {
         if (self.requestButton.alpha == 1.0) && (self.offerButton.alpha == 1.0) {
             let alertController = UIAlertController(title: "Error", message: "Please select what you want!", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+            return false
         }
+        return true
     }
     
     /**
      * Throws an error if no name was entered.
      *
      */
-    func enterName() {
+    func enterName() -> Bool {
         if self.nameTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid name!", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+            return false
         }
+        return true
     }
     
     /**
      * Throws an error if no zipcode was entered.
      *
      */
-    func enterZipcode() {
+    func enterZipcode() -> Bool {
         if self.zipcodeTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid zipcode!", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+            return false
         }
+        return true
     }
     
     /**
      * Throws an error if no message was entered.
      *
      */
-    func enterMessage() {
+    func enterMessage() -> Bool {
         if self.messageTextView.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter a message!", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+            return false
         }
+        return true
     }
     
     /**
      * Throws an error if no type was entered.
      *
      */
-    func enterType() {
+    func enterType() -> Bool {
         if self.typeOfGoodField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter a type of service!", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
-
+            return false
         }
+        return true
     }
-    
-    /*
-    func enterSpecifics() {
-        if self.specificsField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter a specific deed!", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
-        }
-    } */
     
     /**
      * Reset stuff.
@@ -298,11 +273,9 @@ extension FormVC {
         self.zipcodeTextField.text = ""
         self.messageTextView.text = ""
         self.typeOfGoodField.text = ""
-        //self.specificsField.text = ""
         self.offerButton.alpha = 1.0
         self.requestButton.alpha = 1.0
         self.good = ""
-        //self.specifics = ""
         self.latitude = 0.0
         self.longitude = 0.0
     }

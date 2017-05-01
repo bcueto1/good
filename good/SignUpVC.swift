@@ -74,6 +74,13 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
+        } else if profileImageView.image == UIImage(named: "propicDefault") {
+            // If there was no picture entered
+            let alertController = UIAlertController(title: "Error", message: "Please enter a picture", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
         } else {
             self.authService.signUp(firstName: self.nameTextField.text!, email: self.emailTextField.text!, pictureData: data!, password: self.passwordTextField.text!)
         }

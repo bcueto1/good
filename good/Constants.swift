@@ -10,12 +10,11 @@ import UIKit
 
 let KEY_UID = "uid"
 
-let goods = ["Friendship", "Housing", "Services", "Rides", "Food"]
+let goods = ["friendship", "housing", "services", "rides", "food"]
 
-let goodsSpecifics =
-    ["Friendship" : ["In-app messaging", "Meeting to talk", "Accompaniment to Events"],
-     "Housing" : ["Housing Offered"],
-     "Services": ["Laundry", "Utilities", "Babysitting", "Animal-sitting", "Lendering Services", "Tutoring", "Errands", "Cleaning", "Photo Service", "Beauty/Massage", "Personal Trainer", "Nutrionist", "Crafting/Homemaking", "Other"],
-     "Rides": ["Car"],
-     "Food": ["Enter Food Below"]]
+let friendshipArray = ["In-app messaging", "Meeting to talk", "Accompaniment to Events"]
+let housingArray = ["Housing Offered"]
+let servicesArray = ["Laundry", "Utilities", "Babysitting", "Animal-sitting", "Lendering Services", "Tutoring", "Errands", "Cleaning", "Photo Service", "Beauty/Massage", "Personal Trainer", "Nutrionist", "Crafting/Homemaking", "Other"]
+let ridesArray = ["Car"]
+let foodArray = ["Enter food below"]
 

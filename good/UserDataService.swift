@@ -32,6 +32,11 @@ struct UserDataService {
         return databaseRef.child("users")
     }
     
+    func getCurrentUserId() -> String {
+        return FIRAuth.auth()!.currentUser!.uid
+    }
+
+    
     /** 
      * Adds a new request form to the User
      *
@@ -131,6 +136,7 @@ struct UserDataService {
             }
         }
     }
+    
     
     
     

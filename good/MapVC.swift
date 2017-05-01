@@ -11,6 +11,7 @@ import CoreLocation
 import CoreTelephony
 import Firebase
 import MapKit
+import MobileCoreServices
 
 /**
  * Displays a map where user can see active requests/offers.
@@ -127,7 +128,7 @@ extension MapVC {
                         self.userService.addNewRequestForm(user: user, form: form!)
                     }
                     
-                    self.chatService.startChat(form: form!)
+                    //self.chatService.startChat(form: form!)
                     mapView.removeAnnotation(view.annotation!)
                 })
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -190,9 +191,14 @@ extension MapVC {
                 let annotation = MKPointAnnotation()
                 let coord = CLLocationCoordinate2D(latitude: CLLocationDegrees(form.latitude), longitude: CLLocationDegrees(form.longitude))
                 annotation.coordinate = coord
-                //print("\(coord.latitude) \(coord.longitude)")
+
                 annotation.title = "\(form.firstName) \(form.zipcode) \(form.type)"
-                annotation.subtitle = "\(form.message)"
+                if form.request {
+                    annotation.subtitle = "Request - \(form.message)"
+                } else {
+                    annotation.subtitle = "Offer - \(form.message)"
+                }
+                
                 
                 self.mapView.addAnnotation(annotation)
                 

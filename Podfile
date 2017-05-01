@@ -6,6 +6,7 @@ target 'good' do
   use_frameworks!
 
   # Pods for good
+  pod 'Cosmos'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'Firebase'

@@ -19,15 +19,6 @@ class AspectFitButton: UIButton {
         clipsToBounds = true
     }
     
-    /*
-    override func draw(_ rect: CGRect) {
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
-        self.layer.masksToBounds = false
-    } */
-    
     func imageWithColor(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
