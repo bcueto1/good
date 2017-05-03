@@ -137,6 +137,51 @@ struct UserDataService {
         }
     }
     
+    func addRating(user: User, rating: Double) {
+        var currentRating = Double(user.rating)
+        var totalRatings = user.totalRatings
+        
+        var ratingSum = currentRating * Double(totalRatings)
+        ratingSum += rating
+        totalRatings += 1
+        currentRating = ratingSum/Double(totalRatings)
+        let newRating = currentRating as NSNumber
+        
+        self.usersRef.child(user.uid).child("totalRatings").setValue(totalRatings)
+        self.usersRef.child(user.uid).child("rating").setValue(newRating)
+        
+    }
+    
+    /**
+     * Adds points to a given user.
+     *
+     */
+    func addPoints(user: User, points: Int) {
+        var currentPoints = user.points
+        currentPoints = currentPoints + points
+        
+        self.usersRef.child(user.uid).child("points").setValue(currentPoints)
+    }
+    
+    /**
+     * Adds points to current user.
+     *
+     */
+    func addPoints(points: Int) {
+        let currentUser = FIRAuth.auth()!.currentUser!
+        let userRef = self.usersRef.child(currentUser.uid)
+        userRef.observeSingleEvent(of: .value, with: { (currentUser) in
+            
+            let thisUser = User(snapshot: currentUser)
+            var currentPoints = thisUser.points
+            currentPoints = currentPoints + points
+            userRef.child("points").setValue(currentPoints)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     
     

@@ -24,10 +24,12 @@ class MessagingVC: UIViewController {
     var selectedIndex: Int!
     var currentUserFirstName: String!
     
+    /** Database reference */
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
+    /** Chat Functions reference */
     var chatFunctions = ChatFunctions()
     
     /**
@@ -70,6 +72,10 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
         self.view.addSubview(self.segmentedControl)
     }
     
+    /**
+     * Update the posts based on segmented control.
+     *
+     */
     func segmentedControlAction() {
         if self.segmentedControl.selectedSegmentIndex == 0 {
             self.fetchAllUserPosts()
@@ -138,13 +144,19 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
         return height
     }
     
-    
+    /**
+     * When a row is selected, go to the chat stuff.
+     *
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "messagesToChat", sender: nil)
     }
     
-    
+    /**
+     * send relevant info to view conrollers based on segue.
+     *
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "messagesToChat") {
             let chatController = segue.destination as! ChatParentVC

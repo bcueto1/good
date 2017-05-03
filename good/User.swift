@@ -21,6 +21,7 @@ struct User {
     private var _firstName: String!
     private var _email: String!
     private var _rating: NSNumber!
+    private var _totalRatings: Int!
     private var _points: Int!
     private var _offers: Int!
     private var _requests: Int!
@@ -43,6 +44,7 @@ struct User {
         self._firstName = (snapshot.value! as! NSDictionary)["firstName"] as! String
         self._profilePicURL = (snapshot.value! as! NSDictionary)["profilePicURL"] as! String
         self._rating = (snapshot.value! as! NSDictionary)["rating"] as! NSNumber
+        self._totalRatings = (snapshot.value! as! NSDictionary)["totalRatings"] as! Int
         self._points = (snapshot.value! as! NSDictionary)["points"] as! Int
         self._offers = (snapshot.value! as! NSDictionary)["offers"] as! Int
         self._requests = (snapshot.value! as! NSDictionary)["requests"] as! Int
@@ -62,6 +64,7 @@ struct User {
         self._firstName = firstName
         self._profilePicURL = profilePicURL
         self._rating = 0.0
+        self._totalRatings = 0
         self._points = 0
         self._offers = 0
         self._requests = 0
@@ -74,7 +77,7 @@ struct User {
      *
      */
     func toAnyObject() -> [String: Any] {
-        return ["firstName": firstName, "email": email, "uid": uid, "profilePicURL": profilePicURL, "rating": rating, "points": points, "offers": offers, "requests": requests, "weeklyOffers": weeklyOffers, "weeklyRequests": weeklyRequests]
+        return ["firstName": firstName, "email": email, "uid": uid, "profilePicURL": profilePicURL, "rating": rating, "totalRatings": totalRatings, "points": points, "offers": offers, "requests": requests, "weeklyOffers": weeklyOffers, "weeklyRequests": weeklyRequests]
     }
     
     //Getters and Setters
@@ -114,6 +117,15 @@ struct User {
         }
         set (newRating) {
             _rating = newRating
+        }
+    }
+    
+    var totalRatings: Int {
+        get {
+            return _totalRatings
+        }
+        set (newTotalRatings) {
+            _totalRatings = newTotalRatings
         }
     }
     

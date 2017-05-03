@@ -8,13 +8,19 @@
 
 import UIKit
 import Firebase
+import Cosmos
 
+/**
+ * Updates view with info from form/other user.
+ *
+ */
 class SocialInfoVC: UIViewController {
     
     var formID: String!
     var otherUser: User!
     var currentUserFirstName: String!
     
+    /** Database reference */
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
@@ -28,12 +34,14 @@ class SocialInfoVC: UIViewController {
     @IBOutlet weak var postTypeLabel: UILabel!
     @IBOutlet weak var postSpecificLabel: UILabel!
     @IBOutlet weak var postMessageLabel: UITextView!
+    @IBOutlet weak var starView: CosmosView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.loadUserInfo()
         self.populateData()
+        
+        self.starView.settings.updateOnTouch = false
     }
     
     
@@ -41,13 +49,29 @@ class SocialInfoVC: UIViewController {
         
     }
     
+    /**
+     * Send over specific information to each segue destination
+     *
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "infoToChat") {
-            let chatController = segue.destination as? ChatVC
-            chatController?.userFirstname = self.currentUserFirstName
+            let chatController = segue.destination as? ChatParentVC
+            chatController?.formID = self.formID
+            chatController?.userFirstName = self.currentUserFirstName
+        }
+        if (segue.identifier == "infoToDone") {
+            let enterController = segue.destination as? DoneGoodVC
+            enterController?.formID = self.formID
+            enterController?.otherUser = self.otherUser
+            enterController?.currentUserName = self.currentUserFirstName
         }
     }
     
+    
+    /**
+     * Populate the data from form and the other user.
+     *
+     */
     func populateData() {
         let currentUser = FIRAuth.auth()?.currentUser
         
@@ -64,6 +88,8 @@ class SocialInfoVC: UIViewController {
                     let picURL = user.profilePicURL
                     self.downloadImageFromFirebase(urlString: picURL)
                     self.postNameLabel.text = user.firstName
+                    self.starView.rating = user.rating as Double!
+                    self.otherUser = user
                 }) { (error) in
                     print(error.localizedDescription)
                 }
@@ -74,6 +100,8 @@ class SocialInfoVC: UIViewController {
                     let picURL = user.profilePicURL
                     self.downloadImageFromFirebase(urlString: picURL)
                     self.postNameLabel.text = user.firstName
+                    self.starView.rating = user.rating as Double!
+                    self.otherUser = user
                 }) { (error) in
                     print(error.localizedDescription)
                 }
@@ -101,20 +129,6 @@ class SocialInfoVC: UIViewController {
                     })
                 }
             }
-        }
-    }
-    
-    func loadUserInfo() {
-        let currentUser = FIRAuth.auth()!.currentUser!
-        let userRef = databaseRef.child("users").child(currentUser.uid)
-        
-        userRef.observeSingleEvent(of: .value, with: { (currentUser) in
-            
-            let user = User(snapshot: currentUser)
-            self.currentUserFirstName = user.firstName
-            
-        }) { (error) in
-            print(error.localizedDescription)
         }
     }
     

@@ -30,6 +30,10 @@ class ChatVC: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavi
     
     var userdataRef = UserDataService()
 
+    /**
+     * Do things when view loads.
+     *
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
             self.title = "MESSAGES"
@@ -46,6 +50,10 @@ class ChatVC: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavi
 
     }
     
+    /**
+     * When view appears, retrieve messages from Firebase.
+     *
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -62,11 +70,19 @@ class ChatVC: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavi
         }
     }
     
+    /**
+     * Creates a new JSQMessage and appends it to the messages array.
+     *
+     */
     func addMessage(text: String, senderID: String, displayName: String) {
         let message = JSQMessage(senderId: senderID, displayName: displayName, text: text)
         messages.append(message!)
     }
     
+    /**
+     * Send message and send to Firebase.
+     *
+     */
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
         //messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))

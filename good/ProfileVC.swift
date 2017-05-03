@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Cosmos
 
 /**
  * View controller that displays the current user's profile.
@@ -24,6 +25,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var yourOffers: UILabel!
     @IBOutlet weak var yourRequests: UILabel!
     @IBOutlet weak var settingsButton: AspectFitButton!
+    @IBOutlet weak var starView: CosmosView!
     
     /** Rating */
     private var myRating: Double!
@@ -35,7 +37,8 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.starView.settings.updateOnTouch = false
     }
     
     /**
@@ -46,7 +49,6 @@ class ProfileVC: UIViewController {
         super.viewWillAppear(true)
         
         self.loadUserInfo()
-        self.handleRating()
     }
 
     /**
@@ -79,6 +81,7 @@ class ProfileVC: UIViewController {
 
             
             self.downloadImageFromFirebase(urlString: user.profilePicURL)
+            self.handleRating()
             
             
         }) { (error) in
@@ -107,7 +110,7 @@ class ProfileVC: UIViewController {
     
     /** Handle functionality for putting stars for rating. */
     func handleRating() {
-        
+        self.starView.rating = self.myRating
     }
 
 }

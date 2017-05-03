@@ -31,6 +31,7 @@ class ChatParentVC: UIViewController {
         if (segue.identifier == "parentToInfo") {
             let infoController = segue.destination as! SocialInfoVC
             infoController.formID = self.formID
+            infoController.currentUserFirstName = self.userFirstName
         }
     }
 

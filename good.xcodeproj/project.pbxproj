@@ -12,6 +12,7 @@
 		D30D8DB11E15B96600E1FA7E /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB01E15B96600E1FA7E /* RoundImage.swift */; };
 		D30D8DB31E15D4E500E1FA7E /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */; };
 		D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */; };
+		D32357261EB9ABB500F9C6D3 /* DoneGoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32357251EB9ABB500F9C6D3 /* DoneGoodVC.swift */; };
 		D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34334131E766DF20091DB69 /* RoundLabel.swift */; };
 		D347EA4C1EB2799800937355 /* ChatParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347EA4B1EB2799800937355 /* ChatParentVC.swift */; };
 		D347EA4E1EB3B6BC00937355 /* SocialInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */; };
@@ -55,6 +56,7 @@
 		D30D8DB01E15B96600E1FA7E /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectFitButton.swift; sourceTree = "<group>"; };
 		D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		D32357251EB9ABB500F9C6D3 /* DoneGoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneGoodVC.swift; sourceTree = "<group>"; };
 		D34334131E766DF20091DB69 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		D347EA4B1EB2799800937355 /* ChatParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatParentVC.swift; sourceTree = "<group>"; };
 		D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialInfoVC.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				D3FDC6CA1E2EB3A500F12A8A /* ChatVC.swift */,
 				D347EA4B1EB2799800937355 /* ChatParentVC.swift */,
 				D347EA4D1EB3B6BC00937355 /* SocialInfoVC.swift */,
+				D32357251EB9ABB500F9C6D3 /* DoneGoodVC.swift */,
 			);
 			name = SocialVCs;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				D37429311E2ECA2500DA18E4 /* FormCell.swift in Sources */,
 				D39137151E1D8033001526B1 /* ProfileVC.swift in Sources */,
 				D30D8DA81E158D3E00E1FA7E /* SignInVC.swift in Sources */,
+				D32357261EB9ABB500F9C6D3 /* DoneGoodVC.swift in Sources */,
 				D378ECCC1E25D2FB00A3611F /* User.swift in Sources */,
 				D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */,
 				D3706B631EAE85EE00C73882 /* FormSpecificVC.swift in Sources */,
