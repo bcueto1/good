@@ -38,7 +38,6 @@
 		D39137171E1D804A001526B1 /* MessagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39137161E1D804A001526B1 /* MessagingVC.swift */; };
 		D39137191E1D8096001526B1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39137181E1D8096001526B1 /* MapKit.framework */; };
 		D391371B1E1DEE3E001526B1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391371A1E1DEE3E001526B1 /* SignUpVC.swift */; };
-		D391371D1E1DF5CB001526B1 /* FormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391371C1E1DF5CB001526B1 /* FormVC.swift */; };
 		D39593E51E2EB61D007FCD0F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39593E41E2EB61D007FCD0F /* SettingsVC.swift */; };
 		D3A1E6F21E13990700F53173 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3A1E6F11E13990700F53173 /* GoogleService-Info.plist */; };
 		D3C074CF1E17154000BCC927 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C074CE1E17154000BCC927 /* Constants.swift */; };
@@ -84,7 +83,6 @@
 		D39137161E1D804A001526B1 /* MessagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingVC.swift; sourceTree = "<group>"; };
 		D39137181E1D8096001526B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D391371A1E1DEE3E001526B1 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		D391371C1E1DF5CB001526B1 /* FormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormVC.swift; sourceTree = "<group>"; };
 		D39593E41E2EB61D007FCD0F /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D3A1E6F01E137D7000F53173 /* good.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = good.entitlements; sourceTree = "<group>"; };
 		D3A1E6F11E13990700F53173 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		D3706B5D1EAE82C500C73882 /* FormVCs */ = {
 			isa = PBXGroup;
 			children = (
-				D391371C1E1DF5CB001526B1 /* FormVC.swift */,
 				D3706B5E1EAE859C00C73882 /* FormInfoVC.swift */,
 				D3706B601EAE85C700C73882 /* FormTypeVC.swift */,
 				D3706B621EAE85EE00C73882 /* FormSpecificVC.swift */,
@@ -464,7 +461,6 @@
 				D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */,
 				D34A79771E1D6E9A00CFF7AC /* MapVC.swift in Sources */,
 				D34BE9051E7CB36B00C92B1A /* ChatRoom.swift in Sources */,
-				D391371D1E1DF5CB001526B1 /* FormVC.swift in Sources */,
 				D30D8DB11E15B96600E1FA7E /* RoundImage.swift in Sources */,
 				D34873B61E1314F50083331C /* AppDelegate.swift in Sources */,
 				D34BE9031E7BA32D00C92B1A /* Message.swift in Sources */,

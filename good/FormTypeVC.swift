@@ -24,6 +24,7 @@ class FormTypeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -58,13 +59,15 @@ class FormTypeVC: UIViewController {
     }
     
     @IBAction func gatheringButtonTapped(_ sender: Any) {
-        self.type = "food"
+        self.type = "gathering"
         self.setAlphaToOne()
         self.gatheringButton.alpha = 0.5
     }
     
     @IBAction func continueTapped(_ sender: Any) {
-        
+        if self.handleErrors() {
+            performSegue(withIdentifier: "formTypeToSpecific", sender: nil)
+        }
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -81,6 +84,16 @@ class FormTypeVC: UIViewController {
     @IBAction func backTapped(_ sender: Any) {
         performSegue(withIdentifier: "formTypeToInfo", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "formTypeToSpecific") {
+            let specificVC = segue.destination as? FormSpecificVC
+            specificVC?.name = name
+            specificVC?.zipcode = zipcode
+            specificVC?.isRequest = isRequest
+            specificVC?.type = type
+        }
+    }
 
 }
 
@@ -93,6 +106,18 @@ extension FormTypeVC {
         self.serviceButton.alpha = 1.0
         self.foodButton.alpha = 1.0
         self.gatheringButton.alpha = 1.0
+    }
+    
+    func handleErrors() -> Bool {
+        if (self.type == "") {
+            let alertController = UIAlertController(title: "Error", message: "Please enter type!", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
     
 }

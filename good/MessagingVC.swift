@@ -61,8 +61,8 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
     func setSegmentedControl() {
         self.segmentedControl = HMSegmentedControl(frame: CGRect(x: 0, y: 65, width: self.view.frame.size.width, height: 60))
         self.segmentedControl.sectionTitles = ["Requests", "Offers"]
-        self.segmentedControl.backgroundColor = UIColor(red:0.20, green:0.40, blue:0.80, alpha:1.0)
-        self.segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:0.80, blue:0.00, alpha:1.0), NSFontAttributeName: UIFont(name:"Avenir-Heavy", size: 17)!]
+        self.segmentedControl.backgroundColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
+        self.segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.66, green:0.66, blue:0.66, alpha:1.0), NSFontAttributeName: UIFont(name:"Avenir-Heavy", size: 17)!]
         self.segmentedControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.segmentedControl.selectionIndicatorColor = UIColor(red:1, green: 1, blue: 1, alpha: 0.5)
         self.segmentedControl.selectionStyle = .fullWidthStripe
@@ -237,18 +237,20 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
             for form in forms.children {
                 let newForm = Form(snapshot: form as! FIRDataSnapshot)
                 
-                if ((newForm.submitterUID == currentUser.uid) && (newForm.takerUID != "")) {
-                    if newForm.request {
-                        requestResultArray.append(newForm)
-                    } else {
-                        offerResultArray.append(newForm)
-                        
-                    }
-                } else if (newForm.takerUID == currentUser.uid) {
-                    if newForm.request {
-                        offerResultArray.append(newForm)
-                    } else {
-                        requestResultArray.append(newForm)
+                if !newForm.completed {
+                    if ((newForm.submitterUID == currentUser.uid) && (newForm.takerUID != "")) {
+                        if newForm.request {
+                            requestResultArray.append(newForm)
+                        } else {
+                            offerResultArray.append(newForm)
+                            
+                        }
+                    } else if (newForm.takerUID == currentUser.uid) {
+                        if newForm.request {
+                            offerResultArray.append(newForm)
+                        } else {
+                            requestResultArray.append(newForm)
+                        }
                     }
                 }
             }

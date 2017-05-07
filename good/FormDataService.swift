@@ -36,11 +36,11 @@ struct FormDataService {
      * Instantiate new form into firebase.
      *
      */
-    func createNewForm(request: Bool, type: String, firstName: String, zipcode: String, message: String, latitude: NSNumber, longitude: NSNumber) {
+    func createNewForm(request: Bool, type: String, specific: String, firstName: String, zipcode: String, message: String, latitude: NSNumber, longitude: NSNumber) {
         let currentUser = FIRAuth.auth()!.currentUser!
         let postID = NSUUID().uuidString
         let postDate = NSDate().timeIntervalSince1970 as NSNumber
-        let form = Form(request: request, type: type, firstName: firstName, zipcode: zipcode, message: message, latitude: latitude, longitude: longitude, postID: postID, formDate: postDate, submitterUID: currentUser.uid)
+        let form = Form(request: request, type: type, specific: specific, firstName: firstName, zipcode: zipcode, message: message, latitude: latitude, longitude: longitude, postID: postID, formDate: postDate, submitterUID: currentUser.uid)
         
         formsRef.child(postID).setValue(form.toAnyObject()) { (error, ref) in
             if error == nil {

@@ -80,6 +80,7 @@ class SocialInfoVC: UIViewController {
             let form = Form(snapshot: formSnapshot)
             self.postZipcodeLabel.text = form.zipcode
             self.postTypeLabel.text = form.type
+            self.postSpecificLabel.text = form.specific
             self.postMessageLabel.text = form.message
             if (form.submitterUID == currentUser?.uid) {
                 let userRef = self.databaseRef.child("users").child(form.takerUID)

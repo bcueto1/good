@@ -20,7 +20,7 @@ struct Form {
     /** private variables */
     private var _request: Bool!
     private var _type: String!
-    //private var _specific: String!
+    private var _specific: String!
     private var _firstName: String!
     private var _zipcode: String!
     private var _message: String!
@@ -49,7 +49,7 @@ struct Form {
         self._takerUID = ((snapshot.value! as! NSDictionary)["takerUID"] as? String)!
         self._request = ((snapshot.value! as! NSDictionary)["request"] as? Bool)!
         self._type = (snapshot.value! as! NSDictionary)["type"] as! String
-        //self._specific = (snapshot.value! as! NSDictionary)["specific"] as! String
+        self._specific = (snapshot.value! as! NSDictionary)["specific"] as! String
         self._firstName = (snapshot.value! as! NSDictionary)["firstName"] as! String
         self._zipcode = (snapshot.value! as! NSDictionary)["zipcode"] as! String
         self._message = (snapshot.value! as! NSDictionary)["message"] as! String
@@ -64,7 +64,7 @@ struct Form {
      * Original initializer used when creating a new form to firebase.
      *
      */
-    init(request: Bool, type: String, firstName: String, zipcode: String, message: String, latitude: NSNumber, longitude: NSNumber, postID: String, formDate: NSNumber, submitterUID: String) {
+    init(request: Bool, type: String, specific: String, firstName: String, zipcode: String, message: String, latitude: NSNumber, longitude: NSNumber, postID: String, formDate: NSNumber, submitterUID: String) {
         self.key = ""
         self.ref = FIRDatabase.database().reference()
         self._postID = postID
@@ -73,7 +73,7 @@ struct Form {
         self._takerUID = ""
         self._request = request
         self._type = type
-        //self._specific = specific
+        self._specific = specific
         self._firstName = firstName
         self._zipcode = zipcode
         self._message = message
@@ -89,7 +89,7 @@ struct Form {
      *
      */
     func toAnyObject() -> [String: Any] {
-        return ["postID": postID, "formDate": formDate, "submitterUID": submitterUID, "takerUID": takerUID, "request": request, "type": type, "firstName": firstName, "zipcode": zipcode, "message": message, "latitude": latitude, "longitude": longitude, "completed": completed, "doneBySubmitter": doneBySubmitter, "doneByTaker": doneByTaker]
+        return ["postID": postID, "formDate": formDate, "submitterUID": submitterUID, "takerUID": takerUID, "request": request, "type": type, "specific": specific, "firstName": firstName, "zipcode": zipcode, "message": message, "latitude": latitude, "longitude": longitude, "completed": completed, "doneBySubmitter": doneBySubmitter, "doneByTaker": doneByTaker]
     }
     
     /** Getters and Setters */
@@ -127,7 +127,6 @@ struct Form {
         }
     }
     
-    /*
     var specific: String {
         get {
             return self._specific
@@ -135,7 +134,7 @@ struct Form {
         set (newspecific) {
             self._specific = newspecific
         }
-    }*/
+    }
     
     var firstName: String {
         get {

@@ -90,15 +90,16 @@ class DoneGoodVC: UIViewController {
                 
                 if (form.request) {
                     if (form.submitterUID == currentUser?.uid) {
-                        self.userDataService.addPoints(points: 1)
-                    } else {
                         self.userDataService.addPoints(user: self.otherUser, points: 1)
+                        
+                    } else {
+                        self.userDataService.addPoints(points: 1)
                     }
                 } else {
                     if (form.submitterUID == currentUser?.uid) {
-                        self.userDataService.addPoints(user: self.otherUser, points: 1)
-                    } else {
                         self.userDataService.addPoints(points: 1)
+                    } else {
+                        self.userDataService.addPoints(user: self.otherUser, points: 1)
                     }
                 }
             }

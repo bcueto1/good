@@ -128,7 +128,6 @@ extension MapVC {
                         self.userService.addNewRequestForm(user: user, form: form!)
                     }
                     
-                    //self.chatService.startChat(form: form!)
                     mapView.removeAnnotation(view.annotation!)
                 })
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

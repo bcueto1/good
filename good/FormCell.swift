@@ -70,7 +70,7 @@ class FormCell: UITableViewCell {
     }
     
     func updateMessageLabel(form: Form) {
-        self.messageLabel.text = form.message
+        self.messageLabel.text = form.specific
     }
     
     /**
