@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+/**
+ * ChatRoom Struct used for Firebase to store messages for a form.
+ *
+ */
 struct ChatRoom {
     
     var _chatroomID: String!

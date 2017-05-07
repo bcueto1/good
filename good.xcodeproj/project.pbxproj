@@ -148,7 +148,7 @@
 			children = (
 				D3706B5D1EAE82C500C73882 /* FormVCs */,
 				D3EF81A51E70B9FD006F70F8 /* SocialVCs */,
-				D3EF81A41E70B9D5006F70F8 /* MapVCs */,
+				D3EF81A41E70B9D5006F70F8 /* HomeMapVCs */,
 				D3EF81A31E709EAE006F70F8 /* ProfileVCs */,
 				D3EF81A21E709E9A006F70F8 /* AuthenticationVCs */,
 			);
@@ -270,12 +270,12 @@
 			name = ProfileVCs;
 			sourceTree = "<group>";
 		};
-		D3EF81A41E70B9D5006F70F8 /* MapVCs */ = {
+		D3EF81A41E70B9D5006F70F8 /* HomeMapVCs */ = {
 			isa = PBXGroup;
 			children = (
 				D34A79761E1D6E9A00CFF7AC /* MapVC.swift */,
 			);
-			name = MapVCs;
+			name = HomeMapVCs;
 			sourceTree = "<group>";
 		};
 		D3EF81A51E70B9FD006F70F8 /* SocialVCs */ = {

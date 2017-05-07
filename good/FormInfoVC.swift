@@ -63,6 +63,10 @@ class FormInfoVC: UIViewController {
         }
     }
     
+    /**
+     * Handle segue information transfer.
+     *
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "formInfoToType") {
             let typeController = segue.destination as! FormTypeVC
@@ -74,6 +78,10 @@ class FormInfoVC: UIViewController {
 
 }
 
+/**
+ * Extension of the form info vc.
+ *
+ */
 extension FormInfoVC {
     
     /**

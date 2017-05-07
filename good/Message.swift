@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+/**
+ * Message struct that stores information about messages being sent.
+ *
+ */
 struct Message {
     
     var _text: String!

@@ -9,16 +9,29 @@
 import Foundation
 import Firebase
 
+/**
+ * ChatFunctions Struct for handling creating messages
+ *
+ */
 struct ChatFunctions {
     
+    /** database reference */
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
+    /**
+     * Parent function for retrieving/starting a new chat room.
+     *
+     */
     func startChat(form: Form) {
         self.createChatroomID(chatroomID: form.postID)
     }
     
+    /**
+     * Creates a chatroom ID.  If one already exists, just retrieve the chatroom.
+     *
+     */
     func createChatroomID(chatroomID: String) {
         let chatRoomRef = databaseRef.child("chatrooms").queryOrdered(byChild: "chatroomID").queryEqual(toValue: chatroomID)
         chatRoomRef.observe(.value, with: { (snapshot) in
@@ -46,6 +59,10 @@ struct ChatFunctions {
             
     }
     
+    /**
+     * Creates a new chatroom id if none existed prior.
+     *
+     */
     func createNewChatroomID(chatroomID: String) {
         
         let newChatRoom = ChatRoom(chatroomID: chatroomID)

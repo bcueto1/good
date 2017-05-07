@@ -31,8 +31,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var formService = FormDataService()
     /** User Data Service */
     var userService = UserDataService()
-    /** Chat Functions */
-    var chatService = ChatFunctions()
     /** Reference to database */
     var dataBaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
@@ -63,13 +61,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
     }
     
-    /**
-     * When the view appears, create annoations.
-     *
-     */
-    override func viewDidAppear(_ animated: Bool) {
-        self.createAnnotations()
-    }
     
 }
 
@@ -171,10 +162,14 @@ extension MapVC {
             var resultArray = [Form]()
             for form in forms.children {
                 let newForm = Form(snapshot: form as! FIRDataSnapshot)
-                
-                resultArray.append(newForm)
+                if (newForm.takerUID == "") {
+                    resultArray.append(newForm)
+                    self.createAnnotations(form: newForm)
+                }
             }
             self.formArray = resultArray
+            
+            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -184,27 +179,25 @@ extension MapVC {
      * Gets form data and creates annotations for each.
      *
      */
-    func createAnnotations() {
-        for form in self.formArray {
-            if form.takerUID == "" {
-                let annotation = MKPointAnnotation()
-                let coord = CLLocationCoordinate2D(latitude: CLLocationDegrees(form.latitude), longitude: CLLocationDegrees(form.longitude))
-                annotation.coordinate = coord
-
-                annotation.title = "\(form.firstName) \(form.zipcode) \(form.type)"
-                if form.request {
-                    annotation.subtitle = "Request - \(form.message)"
-                } else {
-                    annotation.subtitle = "Offer - \(form.message)"
-                }
-                
-                
-                self.mapView.addAnnotation(annotation)
-                
-                let newCoord = Coordinate(latitude: form.latitude, longitude: form.longitude)
-                coordFormDict[newCoord] = form
+    func createAnnotations(form: Form) {
+        //for form in self.formArray {
+            let annotation = MKPointAnnotation()
+            let coord = CLLocationCoordinate2D(latitude: CLLocationDegrees(form.latitude), longitude: CLLocationDegrees(form.longitude))
+            annotation.coordinate = coord
+            
+            annotation.title = "\(form.firstName) \(form.zipcode) \(form.type)"
+            if form.request {
+                annotation.subtitle = "Request - \(form.message)"
+            } else {
+                annotation.subtitle = "Offer - \(form.message)"
             }
-        }
+            
+            
+            self.mapView.addAnnotation(annotation)
+            
+            let newCoord = Coordinate(latitude: form.latitude, longitude: form.longitude)
+            coordFormDict[newCoord] = form
+       // }
     }
     
 }
