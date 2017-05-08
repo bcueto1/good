@@ -26,6 +26,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var formArray = [Form]()
     /** Dictionary with coordinate values and forms */
     var coordFormDict = [Coordinate: Form]()
+    
+    var selectedFormID: String!
 
     /** Form Data Service */
     var formService = FormDataService()
@@ -61,6 +63,13 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapToForm" {
+            let infoVC = segue.destination as? MapFormVC
+            infoVC?.formID = self.selectedFormID
+        }
+    }
+    
     
 }
 
@@ -84,6 +93,7 @@ extension MapVC {
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView Id")
             view!.canShowCallout = true
+            //view?.image = UIImage(named: ")
         } else {
             view!.annotation = annotation
         }
@@ -110,8 +120,15 @@ extension MapVC {
                 illegalAction.addAction(cancelAction)
                 present(illegalAction, animated: true, completion: nil)
             } else {
+                
+                
+                self.selectedFormID = form?.postID
+                performSegue(withIdentifier: "mapToForm", sender: nil)
+                
+                /*
                 let addJob = UIAlertController(title: "Accept?", message: "Would you like to accept this request?", preferredStyle: UIAlertControllerStyle.alert)
                 let acceptAction = UIAlertAction(title: "Accept", style: .default, handler: { (UIAlertAction) in
+                    
                     self.formService.addTakerToForm(takerID: user.uid, form: form!)
                     if (form?.request)! {
                         self.userService.addNewOfferForm(user: user, form: form!)
@@ -124,7 +141,7 @@ extension MapVC {
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 addJob.addAction(acceptAction)
                 addJob.addAction(cancelAction)
-                present(addJob, animated: true, completion: nil)
+                present(addJob, animated: true, completion: nil) */
             }
         }
     }
@@ -180,7 +197,6 @@ extension MapVC {
      *
      */
     func createAnnotations(form: Form) {
-        //for form in self.formArray {
             let annotation = MKPointAnnotation()
             let coord = CLLocationCoordinate2D(latitude: CLLocationDegrees(form.latitude), longitude: CLLocationDegrees(form.longitude))
             annotation.coordinate = coord
@@ -197,7 +213,6 @@ extension MapVC {
             
             let newCoord = Coordinate(latitude: form.latitude, longitude: form.longitude)
             coordFormDict[newCoord] = form
-       // }
     }
     
 }

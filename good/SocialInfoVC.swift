@@ -30,7 +30,6 @@ class SocialInfoVC: UIViewController {
     @IBOutlet weak var postImage: RoundImage!
     @IBOutlet weak var postNameLabel: UILabel!
     @IBOutlet weak var postZipcodeLabel: UILabel!
-    @IBOutlet weak var postRatingLabel: UILabel!
     @IBOutlet weak var postTypeLabel: UILabel!
     @IBOutlet weak var postSpecificLabel: UILabel!
     @IBOutlet weak var postMessageLabel: UITextView!
@@ -39,9 +38,10 @@ class SocialInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.populateData()
-        
         self.starView.settings.updateOnTouch = false
+        self.starView.settings.fillMode = .precise
+        
+        self.populateData()
     }
     
     

@@ -39,6 +39,7 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         self.starView.settings.updateOnTouch = false
+        self.starView.settings.fillMode = .precise
     }
     
     /**
