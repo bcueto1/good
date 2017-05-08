@@ -32,6 +32,7 @@ class SocialInfoVC: UIViewController {
     @IBOutlet weak var postZipcodeLabel: UILabel!
     @IBOutlet weak var postTypeLabel: UILabel!
     @IBOutlet weak var postSpecificLabel: UILabel!
+    @IBOutlet weak var postRequestLabel: UILabel!
     @IBOutlet weak var postMessageLabel: UITextView!
     @IBOutlet weak var starView: CosmosView!
 
@@ -78,17 +79,23 @@ class SocialInfoVC: UIViewController {
         let formRef = self.databaseRef.child("forms").child(self.formID)
         formRef.observeSingleEvent(of: .value, with: { (formSnapshot) in
             let form = Form(snapshot: formSnapshot)
+            self.postNameLabel.text = form.firstName
             self.postZipcodeLabel.text = form.zipcode
             self.postTypeLabel.text = form.type
             self.postSpecificLabel.text = form.specific
             self.postMessageLabel.text = form.message
+            if form.request {
+                self.postRequestLabel.text = "request"
+            } else {
+                self.postRequestLabel.text = "offer"
+            }
+            
             if (form.submitterUID == currentUser?.uid) {
                 let userRef = self.databaseRef.child("users").child(form.takerUID)
                 userRef.observeSingleEvent(of: .value, with: { (snapshot) in
                     let user = User(snapshot: snapshot)
                     let picURL = user.profilePicURL
                     self.downloadImageFromFirebase(urlString: picURL)
-                    self.postNameLabel.text = user.firstName
                     self.starView.rating = user.rating as Double!
                     self.otherUser = user
                 }) { (error) in
@@ -100,7 +107,6 @@ class SocialInfoVC: UIViewController {
                     let user = User(snapshot: snapshot)
                     let picURL = user.profilePicURL
                     self.downloadImageFromFirebase(urlString: picURL)
-                    self.postNameLabel.text = user.firstName
                     self.starView.rating = user.rating as Double!
                     self.otherUser = user
                 }) { (error) in

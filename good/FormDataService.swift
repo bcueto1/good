@@ -55,6 +55,34 @@ struct FormDataService {
         }
     }
     
+    func changeFirstname(form: Form, name: String) {
+        self.formsRef.child(form.postID).child("firstName").setValue(name)
+    }
+    
+    func changeZipcode(form: Form, zipcode: String) {
+        self.formsRef.child(form.postID).child("zipcode").setValue(zipcode)
+    }
+    
+    func changeType(form: Form, type: String) {
+        self.formsRef.child(form.postID).child("type").setValue(type)
+    }
+    
+    func changeSpecific(form: Form, specific: String) {
+        self.formsRef.child(form.postID).child("specific").setValue(specific)
+    }
+    
+    func changeMessage(form: Form, message: String) {
+        self.formsRef.child(form.postID).child("message").setValue(message)
+    }
+    
+    func changeRequestType(form: Form, request: Bool) {
+        self.formsRef.child(form.postID).child("request").setValue(request)
+    }
+    
+    func deleteForm(form: Form) {
+        self.formsRef.child(form.postID).removeValue()
+    }
+    
     /**
      * Adds a taker to the form.
      *

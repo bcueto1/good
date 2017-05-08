@@ -13,6 +13,7 @@
 		D30D8DB31E15D4E500E1FA7E /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */; };
 		D30D8DB61E16F5FA00E1FA7E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */; };
 		D31D04EB1EBFB899003A282D /* MapFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D04EA1EBFB899003A282D /* MapFormVC.swift */; };
+		D31D04ED1EBFF1CE003A282D /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D04EC1EBFF1CE003A282D /* EditVC.swift */; };
 		D32357261EB9ABB500F9C6D3 /* DoneGoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32357251EB9ABB500F9C6D3 /* DoneGoodVC.swift */; };
 		D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34334131E766DF20091DB69 /* RoundLabel.swift */; };
 		D347EA4C1EB2799800937355 /* ChatParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347EA4B1EB2799800937355 /* ChatParentVC.swift */; };
@@ -57,6 +58,7 @@
 		D30D8DB21E15D4E500E1FA7E /* AspectFitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectFitButton.swift; sourceTree = "<group>"; };
 		D30D8DB51E16F5FA00E1FA7E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		D31D04EA1EBFB899003A282D /* MapFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFormVC.swift; sourceTree = "<group>"; };
+		D31D04EC1EBFF1CE003A282D /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		D32357251EB9ABB500F9C6D3 /* DoneGoodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneGoodVC.swift; sourceTree = "<group>"; };
 		D34334131E766DF20091DB69 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		D347EA4B1EB2799800937355 /* ChatParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatParentVC.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				D34A79761E1D6E9A00CFF7AC /* MapVC.swift */,
 				D31D04EA1EBFB899003A282D /* MapFormVC.swift */,
+				D31D04EC1EBFF1CE003A282D /* EditVC.swift */,
 			);
 			name = MapVCs;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				D378ECCC1E25D2FB00A3611F /* User.swift in Sources */,
 				D378ECC91E255C6A00A3611F /* AuthService.swift in Sources */,
 				D3706B631EAE85EE00C73882 /* FormSpecificVC.swift in Sources */,
+				D31D04ED1EBFF1CE003A282D /* EditVC.swift in Sources */,
 				D34334141E766DF20091DB69 /* RoundLabel.swift in Sources */,
 				D3C074CF1E17154000BCC927 /* Constants.swift in Sources */,
 				D34BE9071E7D820A00C92B1A /* ChatFunctions.swift in Sources */,

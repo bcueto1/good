@@ -113,36 +113,8 @@ extension MapVC {
             mapView.deselectAnnotation(view.annotation, animated: false)
             let coord = Coordinate(latitude: Double((view.annotation?.coordinate.latitude)!) as NSNumber, longitude: Double((view.annotation?.coordinate.longitude)!) as NSNumber)
             let form = self.coordFormDict[coord]
-            let user = FIRAuth.auth()!.currentUser!
-            if (form?.submitterUID == user.uid) {
-                let illegalAction = UIAlertController(title: "Error", message: "Cannot accept your own post.", preferredStyle: UIAlertControllerStyle.alert)
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                illegalAction.addAction(cancelAction)
-                present(illegalAction, animated: true, completion: nil)
-            } else {
-                
-                
-                self.selectedFormID = form?.postID
-                performSegue(withIdentifier: "mapToForm", sender: nil)
-                
-                /*
-                let addJob = UIAlertController(title: "Accept?", message: "Would you like to accept this request?", preferredStyle: UIAlertControllerStyle.alert)
-                let acceptAction = UIAlertAction(title: "Accept", style: .default, handler: { (UIAlertAction) in
-                    
-                    self.formService.addTakerToForm(takerID: user.uid, form: form!)
-                    if (form?.request)! {
-                        self.userService.addNewOfferForm(user: user, form: form!)
-                    } else {
-                        self.userService.addNewRequestForm(user: user, form: form!)
-                    }
-                    
-                    mapView.removeAnnotation(view.annotation!)
-                })
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                addJob.addAction(acceptAction)
-                addJob.addAction(cancelAction)
-                present(addJob, animated: true, completion: nil) */
-            }
+            self.selectedFormID = form?.postID
+            performSegue(withIdentifier: "mapToForm", sender: nil)
         }
     }
     
@@ -203,9 +175,9 @@ extension MapVC {
             
             annotation.title = "\(form.firstName) \(form.zipcode) \(form.type)"
             if form.request {
-                annotation.subtitle = "Request - \(form.message)"
+                annotation.subtitle = "Request - \(form.specific)"
             } else {
-                annotation.subtitle = "Offer - \(form.message)"
+                annotation.subtitle = "Offer - \(form.specific)"
             }
             
             

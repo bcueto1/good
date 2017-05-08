@@ -30,6 +30,7 @@ class MapFormVC: UIViewController {
     @IBOutlet weak var postTypeLabel: UILabel!
     @IBOutlet weak var postSpecificLabel: UILabel!
     @IBOutlet weak var postMessageLabel: UITextView!
+    @IBOutlet weak var requestLabel: UILabel!
     @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
@@ -74,6 +75,14 @@ class MapFormVC: UIViewController {
         performSegue(withIdentifier: "formToMap", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "formToEdit" {
+            let editVC = segue.destination as? EditVC
+            editVC?.formID = self.formID
+            editVC?.currentForm = self.currentForm
+        }
+    }
+    
     
     /**
      * Populate the data from form and the other user.
@@ -85,10 +94,17 @@ class MapFormVC: UIViewController {
         let formRef = self.databaseRef.child("forms").child(self.formID)
         formRef.observeSingleEvent(of: .value, with: { (formSnapshot) in
             let form = Form(snapshot: formSnapshot)
+            self.postNameLabel.text = form.firstName
             self.postZipcodeLabel.text = form.zipcode
             self.postTypeLabel.text = form.type
             self.postSpecificLabel.text = form.specific
             self.postMessageLabel.text = form.message
+            
+            if form.request {
+                self.requestLabel.text = "request"
+            } else {
+                self.requestLabel.text = "offer"
+            }
             
             let userRef = self.databaseRef.child("users").child(form.submitterUID)
             if (form.submitterUID == currentUser?.uid) {
@@ -100,7 +116,6 @@ class MapFormVC: UIViewController {
                 let user = User(snapshot: snapshot)
                 let picURL = user.profilePicURL
                 self.downloadImageFromFirebase(urlString: picURL)
-                self.postNameLabel.text = user.firstName
                 self.starView.rating = user.rating as Double!
             }) { (error) in
                 print(error.localizedDescription)

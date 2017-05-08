@@ -66,6 +66,24 @@ struct UserDataService {
             print(error.localizedDescription)
         }
     }
+
+    func removeRequestForm(userID: String, form: Form) {
+        self.usersRef.child(userID).child("myForms").child("myRequests").child(form.postID).removeValue()
+        self.decrementRequestForm(userID: userID)
+    }
+    
+    func decrementRequestForm(userID: String) {
+        let userRef = self.usersRef.child(userID)
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let thisUser = User(snapshot: snapshot)
+            let totalRequests = thisUser.requests - 1
+            let weeklyRequests = thisUser.weeklyRequests - 1
+            self.usersRef.child(userID).child("requests").setValue(totalRequests)
+            self.usersRef.child(userID).child("weeklyRequests").setValue(weeklyRequests)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     /**
      * Adds a new offer form to the User
@@ -91,6 +109,24 @@ struct UserDataService {
             self.usersRef.child(user.uid).child("offers").setValue(totalOffers)
             self.usersRef.child(user.uid).child("weeklyOffers").setValue(weeklyOffers)
             
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func removeOfferForm(userID: String, form: Form) {
+        self.usersRef.child(userID).child("myForms").child("myOffers").child(form.postID).removeValue()
+        self.decrementOfferForm(userID: userID)
+    }
+    
+    func decrementOfferForm(userID: String) {
+        let userRef = self.usersRef.child(userID)
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let thisUser = User(snapshot: snapshot)
+            let totalOffers = thisUser.offers - 1
+            let weeklyOffers = thisUser.weeklyOffers - 1
+            self.usersRef.child(userID).child("offers").setValue(totalOffers)
+            self.usersRef.child(userID).child("weeklyOffers").setValue(weeklyOffers)
         }) { (error) in
             print(error.localizedDescription)
         }

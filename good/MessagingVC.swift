@@ -203,6 +203,7 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource {
                 formRef.observe(.value, with: { (form) in
                     let newForm = Form(snapshot: form)
                     
+         
                     requestResultArray.append(newForm)
                     self.requestsArray = requestResultArray
                 }) { (error) in
